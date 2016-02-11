@@ -1,4 +1,4 @@
-OpenCV-Tesseract-Demo
+OCR-Translation
 ===============================
 
 This is a project for a translation application using OpenCV, Tesseract OCR, and the Google Translate API. 
@@ -9,3 +9,7 @@ It uses the build for OpenCV and Tesseract provided by from @PablosPoject and @_
 Download the project and use [CocoaPods](http://cocoapods.org/) to install required libraries, by running `pod install`.
 
 Release under GPL
+
+#Contact
+pablosproject@gmail.com
+@PablosProject
