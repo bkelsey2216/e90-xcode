@@ -35,6 +35,11 @@
     imageProcessor= [[ImageProcessingImplementation alloc]  init];    
     
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *filename = [[NSBundle mainBundle]
+                          pathForResource:@"maine" ofType:@"jpg"];
+    UIImage *input_image = [UIImage imageWithContentsOfFile:filename];
+    resultView.image = input_image;
 }
 
 - (void)viewDidUnload

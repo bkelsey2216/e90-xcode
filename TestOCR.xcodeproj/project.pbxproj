@@ -27,10 +27,10 @@
 		0E2042A715825613009D88F2 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0E2042A615825612009D88F2 /* UIImage+OpenCV.mm */; };
 		0E74049215825A5E006AE2B4 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 0E74049115825A5E006AE2B4 /* tessdata */; };
 		482C9DB517B138770080E8D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 482C9DB417B138770080E8D8 /* Default-568h@2x.png */; };
+		AC5D9FFF1C6A9B8F00AA1F52 /* maine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC5D9FFE1C6A9B8F00AA1F52 /* maine.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0997D6262A934A0E9CDE4161 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		0E0ECC131583681400116FAE /* UIImage+operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+operation.h"; sourceTree = "<group>"; };
 		0E0ECC141583681400116FAE /* UIImage+operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+operation.m"; sourceTree = "<group>"; };
 		0E20426615824F34009D88F2 /* TestOCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestOCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +61,9 @@
 		0E74049115825A5E006AE2B4 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		482C9DB417B138770080E8D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6442C35B3A894F23BF9DB1A8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC5D9FFE1C6A9B8F00AA1F52 /* maine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maine.jpg; sourceTree = "<group>"; };
+		C3AFEF8D2A59A2012D8E3490 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		ED3389781E2706F76B61BB74 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +93,7 @@
 				0E20427015824F35009D88F2 /* TestOCR */,
 				0E20426915824F34009D88F2 /* Frameworks */,
 				0E20426715824F34009D88F2 /* Products */,
-				0997D6262A934A0E9CDE4161 /* Pods.xcconfig */,
+				7104DF052BE7D5247DBAAB13 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,12 +148,22 @@
 		0E20427115824F35009D88F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AC5D9FFE1C6A9B8F00AA1F52 /* maine.jpg */,
 				0E20427215824F35009D88F2 /* TestOCR-Info.plist */,
 				0E20427315824F35009D88F2 /* InfoPlist.strings */,
 				0E20427615824F35009D88F2 /* main.m */,
 				0E20427815824F35009D88F2 /* TestOCR-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7104DF052BE7D5247DBAAB13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED3389781E2706F76B61BB74 /* Pods.debug.xcconfig */,
+				C3AFEF8D2A59A2012D8E3490 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +178,7 @@
 				0E20426315824F34009D88F2 /* Frameworks */,
 				0E20426415824F34009D88F2 /* Resources */,
 				5D4D7A6961374D8AB26D855E /* Copy Pods Resources */,
+				40BCFE5A9A76AAFDA4E8EE61 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,6 +222,7 @@
 			files = (
 				0E20427515824F35009D88F2 /* InfoPlist.strings in Resources */,
 				0E20427E15824F35009D88F2 /* MainStoryboard.storyboard in Resources */,
+				AC5D9FFF1C6A9B8F00AA1F52 /* maine.jpg in Resources */,
 				0E74049215825A5E006AE2B4 /* tessdata in Resources */,
 				482C9DB517B138770080E8D8 /* Default-568h@2x.png in Resources */,
 			);
@@ -216,6 +231,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		40BCFE5A9A76AAFDA4E8EE61 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5D4D7A6961374D8AB26D855E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,7 +258,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 		};
 		B676B766E76B4C5F9460B0DD /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -330,7 +360,7 @@
 		};
 		0E20428515824F35009D88F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0997D6262A934A0E9CDE4161 /* Pods.xcconfig */;
+			baseConfigurationReference = ED3389781E2706F76B61BB74 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -347,7 +377,7 @@
 		};
 		0E20428615824F35009D88F2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0997D6262A934A0E9CDE4161 /* Pods.xcconfig */;
+			baseConfigurationReference = C3AFEF8D2A59A2012D8E3490 /* Pods.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

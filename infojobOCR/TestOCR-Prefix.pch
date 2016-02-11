@@ -9,7 +9,7 @@
 #endif
 
 #ifdef __cplusplus
-#import <OpenCV/opencv2/opencv.hpp>
+#import <opencv2/opencv.hpp>
 #include "baseapi.h"
 #endif
 

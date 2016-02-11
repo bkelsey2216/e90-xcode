@@ -7,7 +7,7 @@ DEPENDENCIES:
   - Tesseract
 
 SPEC CHECKSUMS:
-  OpenCV: 350eef8f4af91c517d3ba84dc6ac739269f9c6e2
-  Tesseract: 62dcefb8b3b9d1ba2d62711449cc4da06759ebc1
+  OpenCV: 3083f3f877f2a7b0c59383d5bba5088d339993df
+  Tesseract: 4ab1d5c81d72fca8830c28bfcc80aba9f82455b0
 
-COCOAPODS: 0.20.2
+COCOAPODS: 0.39.0
