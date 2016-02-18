@@ -1,13 +1,16 @@
 PODS:
   - OpenCV (2.4.6)
+  - SBJson (3.2)
   - Tesseract (0.0.1)
 
 DEPENDENCIES:
   - OpenCV
+  - SBJson
   - Tesseract
 
 SPEC CHECKSUMS:
   OpenCV: 3083f3f877f2a7b0c59383d5bba5088d339993df
+  SBJson: 9626892a7dc75ccaa2aad207ed4e4f73d6762846
   Tesseract: 4ab1d5c81d72fca8830c28bfcc80aba9f82455b0
 
 COCOAPODS: 0.39.0
