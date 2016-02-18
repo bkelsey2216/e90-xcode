@@ -196,6 +196,11 @@
 			attributes = {
 				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = 26775;
+				TargetAttributes = {
+					0E20426515824F34009D88F2 = {
+						DevelopmentTeam = K9JPCZYB8R;
+					};
+				};
 			};
 			buildConfigurationList = 0E20426015824F34009D88F2 /* Build configuration list for PBXProject "OCR-Translation" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -361,6 +366,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ED3389781E2706F76B61BB74 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -369,8 +376,9 @@
 				GCC_PREFIX_HEADER = "OCR-Translation/OCR-Translation-Prefix.pch";
 				INFOPLIST_FILE = "OCR-Translation/OCR-Translation-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pablosproject.TestOCR;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bg.OCR-Translation";
 				PRODUCT_NAME = "OCR-Translation";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -379,6 +387,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C3AFEF8D2A59A2012D8E3490 /* Pods.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -387,8 +397,9 @@
 				GCC_PREFIX_HEADER = "OCR-Translation/OCR-Translation-Prefix.pch";
 				INFOPLIST_FILE = "OCR-Translation/OCR-Translation-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pablosproject.TestOCR;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bg.OCR-Translation";
 				PRODUCT_NAME = "OCR-Translation";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
