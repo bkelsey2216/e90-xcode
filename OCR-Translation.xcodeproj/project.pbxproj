@@ -33,14 +33,14 @@
 /* Begin PBXFileReference section */
 		0E0ECC131583681400116FAE /* UIImage+operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+operation.h"; sourceTree = "<group>"; };
 		0E0ECC141583681400116FAE /* UIImage+operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+operation.m"; sourceTree = "<group>"; };
-		0E20426615824F34009D88F2 /* TestOCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestOCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E20426615824F34009D88F2 /* OCR-Translation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OCR-Translation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E20426A15824F34009D88F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0E20426C15824F34009D88F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0E20426E15824F34009D88F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0E20427215824F35009D88F2 /* TestOCR-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestOCR-Info.plist"; sourceTree = "<group>"; };
+		0E20427215824F35009D88F2 /* OCR-Translation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OCR-Translation-Info.plist"; sourceTree = "<group>"; };
 		0E20427415824F35009D88F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0E20427615824F35009D88F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0E20427815824F35009D88F2 /* TestOCR-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestOCR-Prefix.pch"; sourceTree = "<group>"; };
+		0E20427815824F35009D88F2 /* OCR-Translation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCR-Translation-Prefix.pch"; sourceTree = "<group>"; };
 		0E20427915824F35009D88F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E20427A15824F35009D88F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0E20427D15824F35009D88F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				482C9DB417B138770080E8D8 /* Default-568h@2x.png */,
-				0E20427015824F35009D88F2 /* TestOCR */,
+				0E20427015824F35009D88F2 /* OCR-Translation */,
 				0E20426915824F34009D88F2 /* Frameworks */,
 				0E20426715824F34009D88F2 /* Products */,
 				7104DF052BE7D5247DBAAB13 /* Pods */,
@@ -100,7 +100,7 @@
 		0E20426715824F34009D88F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0E20426615824F34009D88F2 /* TestOCR.app */,
+				0E20426615824F34009D88F2 /* OCR-Translation.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,7 +121,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0E20427015824F35009D88F2 /* TestOCR */ = {
+		0E20427015824F35009D88F2 /* OCR-Translation */ = {
 			isa = PBXGroup;
 			children = (
 				0E74049115825A5E006AE2B4 /* tessdata */,
@@ -141,18 +141,17 @@
 				0E0ECC141583681400116FAE /* UIImage+operation.m */,
 				0E20427115824F35009D88F2 /* Supporting Files */,
 			);
-			name = TestOCR;
-			path = infojobOCR;
+			path = "OCR-Translation";
 			sourceTree = "<group>";
 		};
 		0E20427115824F35009D88F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				AC5D9FFE1C6A9B8F00AA1F52 /* maine.jpg */,
-				0E20427215824F35009D88F2 /* TestOCR-Info.plist */,
+				0E20427215824F35009D88F2 /* OCR-Translation-Info.plist */,
 				0E20427315824F35009D88F2 /* InfoPlist.strings */,
 				0E20427615824F35009D88F2 /* main.m */,
-				0E20427815824F35009D88F2 /* TestOCR-Prefix.pch */,
+				0E20427815824F35009D88F2 /* OCR-Translation-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -169,9 +168,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0E20426515824F34009D88F2 /* TestOCR */ = {
+		0E20426515824F34009D88F2 /* OCR-Translation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0E20428415824F35009D88F2 /* Build configuration list for PBXNativeTarget "TestOCR" */;
+			buildConfigurationList = 0E20428415824F35009D88F2 /* Build configuration list for PBXNativeTarget "OCR-Translation" */;
 			buildPhases = (
 				B676B766E76B4C5F9460B0DD /* Check Pods Manifest.lock */,
 				0E20426215824F34009D88F2 /* Sources */,
@@ -184,9 +183,9 @@
 			);
 			dependencies = (
 			);
-			name = TestOCR;
+			name = "OCR-Translation";
 			productName = infojobOCR;
-			productReference = 0E20426615824F34009D88F2 /* TestOCR.app */;
+			productReference = 0E20426615824F34009D88F2 /* OCR-Translation.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -198,7 +197,7 @@
 				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = 26775;
 			};
-			buildConfigurationList = 0E20426015824F34009D88F2 /* Build configuration list for PBXProject "TestOCR" */;
+			buildConfigurationList = 0E20426015824F34009D88F2 /* Build configuration list for PBXProject "OCR-Translation" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -210,7 +209,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0E20426515824F34009D88F2 /* TestOCR */,
+				0E20426515824F34009D88F2 /* OCR-Translation */,
 			);
 		};
 /* End PBXProject section */
@@ -367,10 +366,11 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "infojobOCR/TestOCR-Prefix.pch";
-				INFOPLIST_FILE = "infojobOCR/TestOCR-Info.plist";
+				GCC_PREFIX_HEADER = "OCR-Translation/OCR-Translation-Prefix.pch";
+				INFOPLIST_FILE = "OCR-Translation/OCR-Translation-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_NAME = TestOCR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pablosproject.TestOCR;
+				PRODUCT_NAME = "OCR-Translation";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -384,10 +384,11 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "infojobOCR/TestOCR-Prefix.pch";
-				INFOPLIST_FILE = "infojobOCR/TestOCR-Info.plist";
+				GCC_PREFIX_HEADER = "OCR-Translation/OCR-Translation-Prefix.pch";
+				INFOPLIST_FILE = "OCR-Translation/OCR-Translation-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_NAME = TestOCR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pablosproject.TestOCR;
+				PRODUCT_NAME = "OCR-Translation";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -395,7 +396,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0E20426015824F34009D88F2 /* Build configuration list for PBXProject "TestOCR" */ = {
+		0E20426015824F34009D88F2 /* Build configuration list for PBXProject "OCR-Translation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0E20428215824F35009D88F2 /* Debug */,
@@ -404,7 +405,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0E20428415824F35009D88F2 /* Build configuration list for PBXNativeTarget "TestOCR" */ = {
+		0E20428415824F35009D88F2 /* Build configuration list for PBXNativeTarget "OCR-Translation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0E20428515824F35009D88F2 /* Debug */,

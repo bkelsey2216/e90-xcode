@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/Athena/Desktop/e90-xcode/OCR-Translation.xcodeproj">
+      location = "group:OCR-Translation.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
