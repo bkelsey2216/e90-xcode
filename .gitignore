@@ -16,3 +16,4 @@ profile
 *.moved-aside
 #CocoaPods
 Pods
+*.txt
