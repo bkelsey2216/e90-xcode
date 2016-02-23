@@ -1,7 +1,7 @@
 OCR-Translation
 ===============================
 
-This is a project for a translation application using OpenCV, Tesseract OCR, and the Google Translate API. Any work is for academic use only.
+This is a project for a translation application using OpenCV, Tesseract OCR, and the Google Translate API. All of our work is for academic purposes only.
 
 It uses the build for OpenCV and Tesseract provided by from @PablosPoject (contact: pablosproject@gmail.com)and @_AJ_R, at [https://github.com/pablosproject/iPhone-OCR-Tesseract-and-OpenCV]. It use the OpenCV framework and tutorial made by BloodAxe(https://github.com/BloodAxe) and some other utilities class made by Aptogo (https://github.com/aptogo).
 
