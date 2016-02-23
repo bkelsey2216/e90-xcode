@@ -70,6 +70,10 @@
     FGTranslator *translator = [[FGTranslator alloc] initWithGoogleAPIKey:key];
     translator.preferSourceGuess = NO;
     
+    // remove prior translations - this doesn't need to happen every time
+    // maybe we could move it somewhere else for better performance
+    [FGTranslator flushCache];
+    
     //Pass the UIIMage to cvmat and pass the sequence of pixel to tesseract
 
     cv::Mat toOCR=[src CVGrayscaleMat];
@@ -83,14 +87,19 @@
     
     char* ocr_result = tesseract->GetUTF8Text();
     
-    NSString* source_lang = @"fr";
-    NSString* dest_lang = @"en";
-    NSString* translation_input = @"Bonjour!";
-//    NSString* translation_input = [NSString stringWithFormat:@"%s", ocr_result];
+    // look at casting - this might be a problem
+    
+    NSString* source_lang = @"en";
+    NSString* dest_lang = @"de";
+//    NSString* translation_input = @"HEAVY METAL!";
+    // Google translate gives wrong results for strings that are in all caps -- convert to lowercase
+    NSString* translation_input = [NSString stringWithFormat:@"%s", ocr_result].lowercaseString;
     
     NSLog(@"before calling translator block");
 
-    __block NSMutableString* translation_result;
+    NSLog(translation_input);
+    
+    __block NSMutableString* translation_result = [NSMutableString stringWithString:@"I'm empty inside."];
     
     [translator translateText:translation_input
                        withSource:source_lang
@@ -105,6 +114,12 @@
             translation_result = [NSMutableString stringWithString:translated];
         }
     }];
+    
+    // more pausing?? translated gets filled but translation_result doesn't get changed fast enough??
+    // while loop.
+    
+    // THIS GETS PRINTED BEFORE TRANSLATION RESULT RETURNS!!!
+    NSLog(@"about to return");
     
     return [NSString stringWithString:translation_result];
 //    return [NSString stringWithUTF8String:ocr_result];
