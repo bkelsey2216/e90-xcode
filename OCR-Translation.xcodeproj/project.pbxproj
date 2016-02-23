@@ -28,7 +28,7 @@
 		0E74049215825A5E006AE2B4 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 0E74049115825A5E006AE2B4 /* tessdata */; };
 		482C9DB517B138770080E8D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 482C9DB417B138770080E8D8 /* Default-568h@2x.png */; };
 		AC5D9FFF1C6A9B8F00AA1F52 /* maine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC5D9FFE1C6A9B8F00AA1F52 /* maine.jpg */; };
-		AC5DA1581C76920800097B6A /* key.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC5DA1571C76920800097B6A /* key.txt */; };
+		AC8331851C7BE9EB00596B6A /* key.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC8331841C7BE9EB00596B6A /* key.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +63,7 @@
 		482C9DB417B138770080E8D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6442C35B3A894F23BF9DB1A8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5D9FFE1C6A9B8F00AA1F52 /* maine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maine.jpg; sourceTree = "<group>"; };
-		AC5DA1571C76920800097B6A /* key.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.txt; sourceTree = "<group>"; };
+		AC8331841C7BE9EB00596B6A /* key.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.txt; sourceTree = "<group>"; };
 		C3AFEF8D2A59A2012D8E3490 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		ED3389781E2706F76B61BB74 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,7 +149,7 @@
 		0E20427115824F35009D88F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AC5DA1571C76920800097B6A /* key.txt */,
+				AC8331841C7BE9EB00596B6A /* key.txt */,
 				AC5D9FFE1C6A9B8F00AA1F52 /* maine.jpg */,
 				0E20427215824F35009D88F2 /* OCR-Translation-Info.plist */,
 				0E20427315824F35009D88F2 /* InfoPlist.strings */,
@@ -227,7 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC5DA1581C76920800097B6A /* key.txt in Resources */,
+				AC8331851C7BE9EB00596B6A /* key.txt in Resources */,
 				0E20427515824F35009D88F2 /* InfoPlist.strings in Resources */,
 				0E20427E15824F35009D88F2 /* MainStoryboard.storyboard in Resources */,
 				AC5D9FFF1C6A9B8F00AA1F52 /* maine.jpg in Resources */,

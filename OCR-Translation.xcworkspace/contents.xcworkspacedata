@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:key.txt">
+   </FileRef>
+   <FileRef
       location = "group:OCR-Translation.xcodeproj">
    </FileRef>
    <FileRef
