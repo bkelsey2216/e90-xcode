@@ -9,7 +9,7 @@
 #import "ImageProcessingImplementation.h"
 #import "ImageProcessor.h"
 #import "UIImage+OpenCV.h"
-#import <FGTranslator.h>
+#import "FGTranslator.h"
 
 @implementation ImageProcessingImplementation
 
@@ -51,8 +51,6 @@
     
     return processed;
 
-    
-
 }
 
 
@@ -70,13 +68,13 @@
                                                  error:NULL];
     
     FGTranslator *translator = [[FGTranslator alloc] initWithGoogleAPIKey:key];
-    
+    translator.preferSourceGuess = NO;
     
     //Pass the UIIMage to cvmat and pass the sequence of pixel to tesseract
 
     cv::Mat toOCR=[src CVGrayscaleMat];
     
-    NSLog(@"%d", toOCR.channels());
+    NSLog(@"num channels for ocr image: %d", toOCR.channels());
     
     tesseract->SetImage((uchar*)toOCR.data, toOCR.size().width, toOCR.size().height
                         , toOCR.channels(), toOCR.step1());
@@ -85,28 +83,29 @@
     
     char* ocr_result = tesseract->GetUTF8Text();
     
-    NSString* source_lang = @"en";
-    NSString* dest_lang = @"fr";
-    NSString* translation_input = [NSString stringWithFormat:@"%s" , ocr_result];
+    NSString* source_lang = @"fr";
+    NSString* dest_lang = @"en";
+    NSString* translation_input = @"Bonjour!";
+//    NSString* translation_input = [NSString stringWithFormat:@"%s", ocr_result];
     
+    NSLog(@"before calling translator block");
+
     __block NSMutableString* translation_result;
     
     [translator translateText:translation_input
-                   withSource:source_lang
+                       withSource:source_lang
                        target:dest_lang
                    completion:^(NSError *error, NSString *translated, NSString *sourceLanguage)
-     {if(error){
-        
-        translation_result = [NSMutableString stringWithString:@"Now we fucked up."];
-        NSLog(@"translation failed with error: %@", error);
+    {
+        if (error){
+            NSLog(@"translation failed with error: %@", error);
+            translation_result = [NSMutableString stringWithString:@"Now we fucked up."];
+        }else{
+            NSLog(@"translated from %@: %@", sourceLanguage, translated);
+            translation_result = [NSMutableString stringWithString:translated];
         }
-     else{
-        
-        translation_result = [NSMutableString stringWithString:@"sup"];
-        NSLog(@"translated from %@: %@", sourceLanguage, translated);
-     }
-     }];
-
+    }];
+    
     return [NSString stringWithString:translation_result];
 //    return [NSString stringWithUTF8String:ocr_result];
     
