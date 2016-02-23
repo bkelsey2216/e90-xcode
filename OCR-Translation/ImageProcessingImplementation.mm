@@ -9,6 +9,7 @@
 #import "ImageProcessingImplementation.h"
 #import "ImageProcessor.h"
 #import "UIImage+OpenCV.h"
+#import <FGTranslator.h>
 
 @implementation ImageProcessingImplementation
 
@@ -62,6 +63,15 @@
     
     tesseract->Init([[self pathToLangugeFIle] cStringUsingEncoding:NSUTF8StringEncoding], "eng");
     
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"key"
+                                                     ofType:@"txt"];
+    NSString* key = [NSString stringWithContentsOfFile:path
+                                              encoding:NSUTF8StringEncoding
+                                                 error:NULL];
+    
+    FGTranslator *translator = [[FGTranslator alloc] initWithGoogleAPIKey:key];
+    
+    
     //Pass the UIIMage to cvmat and pass the sequence of pixel to tesseract
 
     cv::Mat toOCR=[src CVGrayscaleMat];
@@ -73,9 +83,32 @@
     
     tesseract->Recognize(NULL);
     
-    char* utf8Text = tesseract->GetUTF8Text();
+    char* ocr_result = tesseract->GetUTF8Text();
     
-    return [NSString stringWithUTF8String:utf8Text];
+    NSString* source_lang = @"en";
+    NSString* dest_lang = @"fr";
+    NSString* translation_input = [NSString stringWithFormat:@"%s" , ocr_result];
+    
+    __block NSMutableString* translation_result;
+    
+    [translator translateText:translation_input
+                   withSource:source_lang
+                       target:dest_lang
+                   completion:^(NSError *error, NSString *translated, NSString *sourceLanguage)
+     {if(error){
+        
+        translation_result = [NSMutableString stringWithString:@"Now we fucked up."];
+        NSLog(@"translation failed with error: %@", error);
+        }
+     else{
+        
+        translation_result = [NSMutableString stringWithString:@"sup"];
+        NSLog(@"translated from %@: %@", sourceLanguage, translated);
+     }
+     }];
+
+    return [NSString stringWithString:translation_result];
+//    return [NSString stringWithUTF8String:ocr_result];
     
 }
 

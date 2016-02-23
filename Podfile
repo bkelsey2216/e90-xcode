@@ -1,4 +1,5 @@
-platform :ios
+platform :ios, '6.0'
 pod 'OpenCV'
 pod 'Tesseract'
 pod 'SBJson'
+pod 'FGTranslator'
