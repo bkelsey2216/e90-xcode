@@ -9,7 +9,7 @@
 #import "ImageProcessingImplementation.h"
 #import "ImageProcessor.h"
 #import "UIImage+OpenCV.h"
-#import "FGTranslator.h"
+
 
 @implementation ImageProcessingImplementation
 
@@ -61,19 +61,6 @@
     
     tesseract->Init([[self pathToLangugeFIle] cStringUsingEncoding:NSUTF8StringEncoding], "eng");
     
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"key"
-                                                     ofType:@"txt"];
-    NSString* key = [NSString stringWithContentsOfFile:path
-                                              encoding:NSUTF8StringEncoding
-                                                 error:NULL];
-    
-    FGTranslator *translator = [[FGTranslator alloc] initWithGoogleAPIKey:key];
-    translator.preferSourceGuess = NO;
-    
-    // remove prior translations - this doesn't need to happen every time
-    // maybe we could move it somewhere else for better performance
-    [FGTranslator flushCache];
-    
     //Pass the UIIMage to cvmat and pass the sequence of pixel to tesseract
 
     cv::Mat toOCR=[src CVGrayscaleMat];
@@ -86,45 +73,11 @@
     tesseract->Recognize(NULL);
     
     char* ocr_result = tesseract->GetUTF8Text();
-    
-    // look at casting - this might be a problem
-    
-    NSString* source_lang = @"en";
-    NSString* dest_lang = @"de";
-//    NSString* translation_input = @"HEAVY METAL!";
-    // Google translate gives wrong results for strings that are in all caps -- convert to lowercase
-    NSString* translation_input = [NSString stringWithFormat:@"%s", ocr_result].lowercaseString;
-    
-    NSLog(@"before calling translator block");
 
-    NSLog(translation_input);
-    
-    __block NSMutableString* translation_result = [NSMutableString stringWithString:@"I'm empty inside."];
-    
-    [translator translateText:translation_input
-                       withSource:source_lang
-                       target:dest_lang
-                   completion:^(NSError *error, NSString *translated, NSString *sourceLanguage)
-    {
-        if (error){
-            NSLog(@"translation failed with error: %@", error);
-            translation_result = [NSMutableString stringWithString:@"Now we fucked up."];
-        }else{
-            NSLog(@"translated from %@: %@", sourceLanguage, translated);
-            translation_result = [NSMutableString stringWithString:translated];
-        }
-    }];
-    
-    // more pausing?? translated gets filled but translation_result doesn't get changed fast enough??
-    // while loop.
-    
-    // THIS GETS PRINTED BEFORE TRANSLATION RESULT RETURNS!!!
-    NSLog(@"about to return");
-    
-    return [NSString stringWithString:translation_result];
-//    return [NSString stringWithUTF8String:ocr_result];
+    return [NSString stringWithUTF8String:ocr_result];
     
 }
+
 
 
 - (UIImage*) processRotation:(UIImage*)src{

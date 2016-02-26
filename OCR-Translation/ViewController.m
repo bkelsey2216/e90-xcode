@@ -8,8 +8,7 @@
 #import "ViewController.h"
 #import "ImageProcessingImplementation.h"
 #import "UIImage+operation.h"
-#import "SBJson.h"
-
+#import "FGTranslator.h"
 
 @interface ViewController ()
 
@@ -81,12 +80,67 @@
 
 - (IBAction)OCR:(id)sender {
     
-    NSString *readed=[imageProcessor OCRImage:[self processedImage]];
-    [[[UIAlertView alloc] initWithTitle:@""
-                                message:[NSString stringWithFormat:@"Recognized:\n%@", readed]
-                               delegate:nil
-                      cancelButtonTitle:nil
-                      otherButtonTitles:@"OK", nil] show];
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"key"
+                                                     ofType:@"txt"];
+    NSString* key = [NSString stringWithContentsOfFile:path
+                                              encoding:NSUTF8StringEncoding
+                                                 error:NULL];
+    
+    FGTranslator *translator = [[FGTranslator alloc] initWithGoogleAPIKey:key];
+    translator.preferSourceGuess = NO;
+    
+    [FGTranslator flushCache];
+    
+    NSString *ocr_result=[imageProcessor OCRImage:[self processedImage]];
+    
+    NSString* source_lang = @"en";
+    NSString* dest_lang = @"de";
+
+    // Google translate gives wrong results for strings that are in all caps -- convert to lowercase
+    NSString* translation_input = ocr_result.lowercaseString;
+    
+    NSLog(@"before calling translator block");
+    
+    NSLog(translation_input);
+    
+    __block NSMutableString* translation_result = [NSMutableString stringWithString:@"I'm in main!."];
+    
+    dispatch_queue_t worker_queue = dispatch_queue_create("My Queue",NULL);
+    dispatch_async(worker_queue, ^{
+        // Perform long running process
+        
+        sleep(3);
+        translation_result = [NSMutableString stringWithString:@"Now I'm not."];
+        
+//        [translator translateText:translation_input
+//                       withSource:source_lang
+//                           target:dest_lang
+//                       completion:^(NSError *error, NSString *translated, NSString *sourceLanguage)
+//                                      {if (error){
+//                                          NSLog(@"translation failed with error: %@", error);
+//                                          translation_result = [NSMutableString stringWithString:@"Now we fucked up."];
+//                                      }else{
+//                                          NSLog(@"translated from %@: %@", sourceLanguage, translated);
+//                                          translation_result = [NSMutableString stringWithString:translated];
+//                                      }}
+//             
+//        ];
+     
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [[[UIAlertView alloc] initWithTitle:@""
+                                    message:[NSString stringWithFormat:@"Recognized:\n%@", translation_result]
+                                    delegate:nil
+                            cancelButtonTitle:nil
+                            otherButtonTitles:@"OK", nil] show]; });
+        
+    });
+
+    
+//    [[[UIAlertView alloc] initWithTitle:@""
+//                                message:[NSString stringWithFormat:@"Recognized:\n%@", ocr_result]
+//                               delegate:nil
+//                      cancelButtonTitle:nil
+//                      otherButtonTitles:@"OK", nil] show];
 }
 
 - (IBAction)PreRotation:(id)sender {
