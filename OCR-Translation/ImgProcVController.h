@@ -27,6 +27,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *FilterButton;
 @property (strong, nonatomic) IBOutlet UIButton *BinarizeButton;
 @property (strong, nonatomic) IBOutlet UIButton *originalButton;
+@property (strong, nonatomic) IBOutlet UIButton *confirmLanguage;
 
 //- (IBAction)TakePhoto:(id)sender;
 - (IBAction)Pre:(id)sender;
@@ -36,7 +37,7 @@
 - (IBAction)PreFilter:(id)sender;
 - (IBAction)PreBinarize:(id)sender;
 - (IBAction)returnOriginal:(id)sender;
-
+- (IBAction)confirmLanguage:(id)sender;
 
 // ChooseMedia doesn't exist anymore:
 //- (IBAction)ChooseMedia:(id)sender;

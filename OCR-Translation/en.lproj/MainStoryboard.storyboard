@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="d03-9w-TzN">
-                                <rect key="frame" x="138" y="533" width="86" height="37"/>
+                                <rect key="frame" x="138" y="507" width="86" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.57203489878009095" green="0.68211763749195464" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -69,7 +69,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="H8p-31-1rq">
-                                <rect key="frame" x="232" y="533" width="99" height="37"/>
+                                <rect key="frame" x="232" y="507" width="99" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.58039215686274515" green="0.85490196078431369" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -81,7 +81,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qxT-rY-ft4">
-                                <rect key="frame" x="145" y="578" width="72" height="37"/>
+                                <rect key="frame" x="145" y="559" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.46651273939999999" green="1" blue="0.76783405449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -93,7 +93,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dCv-38-UEb">
-                                <rect key="frame" x="240" y="578" width="83" height="37"/>
+                                <rect key="frame" x="240" y="559" width="83" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.76413228237228803" green="0.59589567553641909" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -105,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qOv-tc-3iQ">
-                                <rect key="frame" x="43" y="533" width="81" height="37"/>
+                                <rect key="frame" x="43" y="507" width="81" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -116,8 +116,25 @@
                                     <action selector="returnOriginal:" destination="2" eventType="touchUpInside" id="pd0-wK-hvr"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="DJn-mc-mc5">
+                                <rect key="frame" x="36" y="123" width="302" height="319"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FPW-yi-NCT">
+                                <rect key="frame" x="131" y="456" width="113" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Pre-Process">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Pre:" destination="2" eventType="touchUpInside" id="HnU-ff-Qmb"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZVF-Md-wld">
-                                <rect key="frame" x="43" y="578" width="79" height="37"/>
+                                <rect key="frame" x="43" y="559" width="79" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,21 +145,26 @@
                                     <action selector="OCR:" destination="2" eventType="touchUpInside" id="3Lm-Fw-hyr"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="DJn-mc-mc5">
-                                <rect key="frame" x="36" y="123" width="302" height="319"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lqv-S5-kJ8">
+                                <rect key="frame" x="20" y="626" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FPW-yi-NCT">
-                                <rect key="frame" x="138" y="475" width="113" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Eng" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="zxP-V9-xjF">
+                                <rect key="frame" x="120" y="622" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wfh-yx-XyG">
+                                <rect key="frame" x="232" y="622" width="132" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Pre-Process">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="Change Language"/>
                                 <connections>
-                                    <action selector="Pre:" destination="2" eventType="touchUpInside" id="HnU-ff-Qmb"/>
+                                    <action selector="confirmLanguage:" destination="2" eventType="touchUpInside" id="8yN-Nj-a1q"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -156,16 +178,44 @@
                         <outlet property="BinarizeButton" destination="dCv-38-UEb" id="WBB-SG-vWy"/>
                         <outlet property="FilterButton" destination="qxT-rY-ft4" id="q2v-fJ-v0A"/>
                         <outlet property="Histogrambutton" destination="H8p-31-1rq" id="Cin-GV-ju7"/>
+                        <outlet property="confirmLanguage" destination="wfh-yx-XyG" id="AqO-du-a37"/>
                         <outlet property="originalButton" destination="qOv-tc-3iQ" id="pw5-6T-qMX"/>
                         <outlet property="process" destination="FPW-yi-NCT" id="HBt-yk-RDl"/>
                         <outlet property="read" destination="ZVF-Md-wld" id="rws-zp-ZZL"/>
                         <outlet property="resultView" destination="DJn-mc-mc5" id="yb8-Ls-uAK"/>
                         <outlet property="rotateButton" destination="d03-9w-TzN" id="mFL-p3-0b5"/>
+                        <segue destination="a5b-9g-acE" kind="push" identifier="selectLanguage" id="sdy-PJ-IgB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="22.5" y="648.5"/>
+        </scene>
+        <!--Language View Controller-->
+        <scene sceneID="OYQ-kZ-7XY">
+            <objects>
+                <viewController storyboardIdentifier="languageSelect" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a5b-9g-acE" customClass="LanguageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tZo-ca-gPu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xU1-OX-JE3">
+                                <rect key="frame" x="112" y="274" width="174" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Choose Language"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nBG-hv-Hvv"/>
+                    <connections>
+                        <outlet property="confirm" destination="xU1-OX-JE3" id="bMw-8Y-uKX"/>
+                        <segue destination="2" kind="push" identifier="confirmLanguage" id="Qmo-Fv-zwe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rRB-5v-kTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="673.5" y="648.5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -173,4 +223,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qmo-Fv-zwe"/>
+    </inferredMetricsTieBreakers>
 </document>

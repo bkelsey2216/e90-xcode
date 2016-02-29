@@ -19,13 +19,7 @@
 @synthesize takenImage;
 
 // Use button to get to next view - save incase we want to do this later
-//- (void)performDisplayNextView:(id)paramSender{
-//    
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-//    ViewController1 *viewController1 = [storyboard instantiateViewControllerWithIdentifier:@"processView"];
-//
-//    [self.navigationController pushViewController:viewController1 animated:YES];
-//}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

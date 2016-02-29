@@ -30,6 +30,7 @@
 		AC07999F1C838EE800087C8D /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC07999E1C838EE800087C8D /* StartupViewController.m */; };
 		AC5D9FFF1C6A9B8F00AA1F52 /* maine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC5D9FFE1C6A9B8F00AA1F52 /* maine.jpg */; };
 		AC8331851C7BE9EB00596B6A /* key.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC8331841C7BE9EB00596B6A /* key.txt */; };
+		ACFC40261C8504F900C274E5 /* LanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFC40251C8504F900C274E5 /* LanguageViewController.m */; };
 		ACFCC9D11C83AB7E0067C92E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFCC9D01C83AB7E0067C92E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		AC07999E1C838EE800087C8D /* StartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
 		AC5D9FFE1C6A9B8F00AA1F52 /* maine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maine.jpg; sourceTree = "<group>"; };
 		AC8331841C7BE9EB00596B6A /* key.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.txt; sourceTree = "<group>"; };
+		ACFC40241C8504F900C274E5 /* LanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageViewController.h; sourceTree = "<group>"; };
+		ACFC40251C8504F900C274E5 /* LanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageViewController.m; sourceTree = "<group>"; };
 		ACFCC9D01C83AB7E0067C92E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3AFEF8D2A59A2012D8E3490 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		ED3389781E2706F76B61BB74 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				0E20427C15824F35009D88F2 /* MainStoryboard.storyboard */,
 				0E20427F15824F35009D88F2 /* ImgProcVController.h */,
 				0E20428015824F35009D88F2 /* ImgProcVController.m */,
+				ACFC40241C8504F900C274E5 /* LanguageViewController.h */,
+				ACFC40251C8504F900C274E5 /* LanguageViewController.m */,
 				AC07999D1C838EE800087C8D /* StartupViewController.h */,
 				AC07999E1C838EE800087C8D /* StartupViewController.m */,
 				0E20428B15824FF5009D88F2 /* ImageProcessingProtocol.h */,
@@ -305,6 +310,7 @@
 				0E20429115824FF5009D88F2 /* ImageProcessor.cpp in Sources */,
 				AC07999F1C838EE800087C8D /* StartupViewController.m in Sources */,
 				0E2042A715825613009D88F2 /* UIImage+OpenCV.mm in Sources */,
+				ACFC40261C8504F900C274E5 /* LanguageViewController.m in Sources */,
 				0E0ECC151583681400116FAE /* UIImage+operation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

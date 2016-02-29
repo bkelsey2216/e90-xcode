@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 26775. All rights reserved.
 //
 #import "ImgProcVController.h"
+#import "LanguageViewController.h"
 #import "ImageProcessingImplementation.h"
 #import "UIImage+operation.h"
 #import "FGTranslator.h"
@@ -34,7 +35,7 @@
     [super viewDidLoad];
     imageProcessor= [[ImageProcessingImplementation alloc]  init];    
     
-    self.title = @"Photo Selection";
+    self.title = @"Process Image";
 
     NSLog(@"inside viewDidLoad");
 
@@ -127,7 +128,7 @@
     dispatch_async(worker_queue, ^{
         // Perform long running process
         
-        sleep(3);
+        sleep(1);
         translation_result = [NSMutableString stringWithString:@"Now I'm not."];
         
 //        [translator translateText:translation_input
@@ -190,7 +191,11 @@
     self.processedImage=[self takenImage ];
     self.resultView.image= [self takenImage];
 }
-                       
+
+- (IBAction)confirmLanguage:(id)sender {
+    
+    [self performSegueWithIdentifier:@"selectLanguage" sender:self];
+}
 
 // TakePhoto is now handled in ViewControlStartup!!
 
@@ -276,6 +281,15 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if([segue.identifier isEqualToString:@"selectLanguage"]){
+        
+        LanguageViewController *langView = segue.destinationViewController;
+        
+        //send the selected language back to imgProc view controller?
+        langView.takenImage = [self takenImage];
+        // set parameters for language view here
+    }
     //   Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
