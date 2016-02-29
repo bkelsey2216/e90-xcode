@@ -10,6 +10,9 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (nonatomic) UIStoryboard* storyboard;
+@property (nonatomic) UIViewController *currViewController;
+@property (strong, nonatomic) UINavigationController *navigationController;
 @property (strong, nonatomic) UIWindow *window;
 
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ImageProcessingProtocol.h"
 
-@interface ViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>{
+@interface ViewController1 : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>{
     UIImagePickerController *mediaPicker;
     UIImage *takenImage;
     UIImage *processedImage;
@@ -28,7 +28,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *BinarizeButton;
 @property (strong, nonatomic) IBOutlet UIButton *originalButton;
 
-- (IBAction)TakePhoto:(id)sender;
+//- (IBAction)TakePhoto:(id)sender;
 - (IBAction)Pre:(id)sender;
 - (IBAction)OCR:(id)sender;
 - (IBAction)PreRotation:(id)sender;
@@ -38,8 +38,9 @@
 - (IBAction)returnOriginal:(id)sender;
 
 
-- (IBAction)ChooseMedia:(id)sender;
-- (UIView*)CreateOverlay;
+// ChooseMedia doesn't exist anymore:
+//- (IBAction)ChooseMedia:(id)sender;
+//- (UIView*)CreateOverlay;
 
 
 @end

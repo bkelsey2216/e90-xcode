@@ -5,16 +5,16 @@
 //  Created by Paolo Tagliani on 08/06/12.
 //  Copyright (c) 2012 26775. All rights reserved.
 //
-#import "ViewController.h"
+#import "ViewController1.h"
 #import "ImageProcessingImplementation.h"
 #import "UIImage+operation.h"
 #import "FGTranslator.h"
 
-@interface ViewController ()
+@interface ViewController1 ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController1
 
 
 @synthesize takenImage;
@@ -34,16 +34,34 @@
     [super viewDidLoad];
     imageProcessor= [[ImageProcessingImplementation alloc]  init];    
     
+    self.title = @"Photo Selection";
 
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    NSString *filename = [[NSBundle mainBundle]
-                          pathForResource:@"maine" ofType:@"jpg"];
-    
+    NSLog(@"inside viewDidLoad");
 
+}
+
+// next 2 functions are for switching between 2 view controllers
+//- (void)goBack{
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
+
+- (void)viewDidAppear:(BOOL)paramAnimated{
+    [super viewDidAppear:paramAnimated];
     
-    UIImage *input_image = [UIImage imageWithContentsOfFile:filename];
-    resultView.image = input_image;
+    NSLog(@"inside viewDidAppear");
+    
+    self.resultView.image = self.takenImage;
+//    NSString *filename = [[NSBundle mainBundle]
+//                          pathForResource:@"maine" ofType:@"jpg"];
+//    
+//    
+//    
+//    UIImage *input_image = [UIImage imageWithContentsOfFile:filename];
+//    resultView.image = input_image;
+    
+//    [self performSelector:@selector(goBack)
+//               withObject:nil
+//               afterDelay:5.0f];
 }
 
 - (void)viewDidUnload
@@ -173,83 +191,93 @@
     self.resultView.image= [self takenImage];
 }
                        
-                       
-- (IBAction)TakePhoto:(id)sender {
-    mediaPicker = [[UIImagePickerController alloc] init];
-    mediaPicker.delegate=self;
-    mediaPicker.allowsEditing = YES;
-    
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:
-                                      @"Take a photo or choose existing, and use the control to center the announce"
-                                                                 delegate: self                                                        cancelButtonTitle:@"Cancel"
-                                                   destructiveButtonTitle:nil
-                                                        otherButtonTitles:@"Take photo", @"Choose Existing", nil];
-        [actionSheet showInView:self.view];
-    } else {
-        mediaPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;     
-        [self presentModalViewController:mediaPicker animated:YES];
-    }
-}
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    if(buttonIndex != actionSheet.cancelButtonIndex)
-    {
-        if (buttonIndex == 0) {
-            mediaPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        } else if (buttonIndex == 1) {
-            mediaPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        }
-        
-        [self presentModalViewController:mediaPicker animated:YES];
-    }
-    
-    else [self dismissModalViewControllerAnimated:YES]; 
-    
-    
-}
+// TakePhoto is now handled in ViewControlStartup!!
 
-- (UIView*)CreateOverlay{
-    
-    UIView *overlay= [[UIView alloc] 
-                      initWithFrame:CGRectMake
-                      (0, 0, self.view.frame.size.width, self.view.frame.size.height*0.10)];//width equal and height 15%
-    overlay.backgroundColor=[UIColor blackColor];
-    overlay.alpha=0.5;
-    
-    return overlay;
-}
+//- (IBAction)TakePhoto:(id)sender {
+//    mediaPicker = [[UIImagePickerController alloc] init];
+//    mediaPicker.delegate=self;
+//    mediaPicker.allowsEditing = YES;
+//    
+//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+//        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:
+//                                      @"Take a photo or choose existing, and use the control to center the announce"
+//                                                                 delegate: self                                                        cancelButtonTitle:@"Cancel"
+//                                                   destructiveButtonTitle:nil
+//                                                        otherButtonTitles:@"Take photo", @"Choose Existing", nil];
+//        [actionSheet showInView:self.view];
+//    } else {
+//        mediaPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;     
+//        [self presentModalViewController:mediaPicker animated:YES];
+//    }
+//}
+//
+//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    
+//    if(buttonIndex != actionSheet.cancelButtonIndex)
+//    {
+//        if (buttonIndex == 0) {
+//            mediaPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//        } else if (buttonIndex == 1) {
+//            mediaPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//        }
+//        
+//        [self presentModalViewController:mediaPicker animated:YES];
+//    }
+//    
+//    else [self dismissModalViewControllerAnimated:YES]; 
+//    
+//    
+//}
+//
+//- (UIView*)CreateOverlay{
+//    
+//    UIView *overlay= [[UIView alloc] 
+//                      initWithFrame:CGRectMake
+//                      (0, 0, self.view.frame.size.width, self.view.frame.size.height*0.10)];//width equal and height 15%
+//    overlay.backgroundColor=[UIColor blackColor];
+//    overlay.alpha=0.5;
+//    
+//    return overlay;
+//}
+//
+//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+//    
+//    [picker dismissModalViewControllerAnimated:YES];
+//    
+//    //I take the coordinate of the cropping
+//    CGRect croppedRect=[[info objectForKey:UIImagePickerControllerCropRect] CGRectValue];
+//
+//    UIImage *original=[info objectForKey:UIImagePickerControllerOriginalImage];
+//   
+//
+//    UIImage *rotatedCorrectly;
+//    
+//    if (original.imageOrientation!=UIImageOrientationUp)
+//    rotatedCorrectly=[original rotate:original.imageOrientation];
+//    else rotatedCorrectly=original;
+//    
+//
+//    CGImageRef ref= CGImageCreateWithImageInRect(rotatedCorrectly.CGImage, croppedRect);
+//    self.takenImage= [UIImage imageWithCGImage:ref];
+//    self.resultView.image=[self takenImage];
+//    self.processedImage=[self takenImage ];
+//    self.process.hidden=NO;
+//    self.BinarizeButton.hidden=NO;
+//    self.Histogrambutton.hidden=NO;
+//    self.FilterButton.hidden=NO;
+//    self.rotateButton.hidden=NO;
+//    self.read.hidden=NO;
+//    self.originalButton.hidden=NO;
+//    
+//}
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    
-    [picker dismissModalViewControllerAnimated:YES];
-    
-    //I take the coordinate of the cropping
-    CGRect croppedRect=[[info objectForKey:UIImagePickerControllerCropRect] CGRectValue];
+#pragma mark - Navigation
 
-    UIImage *original=[info objectForKey:UIImagePickerControllerOriginalImage];
-   
-
-    UIImage *rotatedCorrectly;
-    
-    if (original.imageOrientation!=UIImageOrientationUp)
-    rotatedCorrectly=[original rotate:original.imageOrientation];
-    else rotatedCorrectly=original;
-    
-
-    CGImageRef ref= CGImageCreateWithImageInRect(rotatedCorrectly.CGImage, croppedRect);
-    self.takenImage= [UIImage imageWithCGImage:ref];
-    self.resultView.image=[self takenImage];
-     self.processedImage=[self takenImage ];
-    process.hidden=NO;
-    BinarizeButton.hidden=NO;
-    Histogrambutton.hidden=NO;
-    FilterButton.hidden=NO;
-    rotateButton.hidden=NO;
-        self.read.hidden=NO;    
-    originalButton.hidden=NO;
-    
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //   Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
 
 @end

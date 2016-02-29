@@ -7,13 +7,41 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController1.h"
+#import "ViewControllerStartup.h"
 
 @implementation AppDelegate
 
+@synthesize currViewController = _currViewController;
+@synthesize navigationController = _navigationController;
 @synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+ 
+    self.storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+
+    self.currViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"startupView"];
+    self.navigationController  = [[UINavigationController alloc] initWithRootViewController:self.currViewController];
+    
+    
+//    ViewControllerStartup *viewControllerStartup = [[ViewControllerStartup alloc]
+//                                       initWithNibName: nil
+//                                       bundle:nil];
+    
+//    self.navigationController = [[UINavigationController alloc]
+//                                 initWithRootViewController:viewControllerStartup];
+
+    // start the app in the cat/buttons view:
+//    self.currViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"processView"];
+//    self.navigationController  = [[UINavigationController alloc] initWithRootViewController:self.currViewController];
+        
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setRootViewController:self.currViewController];
+    [self.window addSubview:self.navigationController.view];
+//    [self.window.rootViewController presentViewController:_currViewController animated:YES completion:nil];
+    [self.window makeKeyAndVisible];
+    
     // Override point for customization after application launch.
     return YES;
 }
