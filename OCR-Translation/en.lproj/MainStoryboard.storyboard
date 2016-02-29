@@ -8,7 +8,7 @@
         <!--startupView-->
         <scene sceneID="wIF-U1-TMB">
             <objects>
-                <viewController storyboardIdentifier="startupView" title="startupView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D9e-qC-Woe" customClass="ViewControllerStartup" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="startupView" title="startupView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D9e-qC-Woe" customClass="StartupViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hrI-dX-X0O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
         <!--processView-->
         <scene sceneID="5">
             <objects>
-                <viewController storyboardIdentifier="processView" title="processView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2" customClass="ViewController1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="processView" title="processView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2" customClass="ImgProcessController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -165,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22.5" y="639.5"/>
+            <point key="canvasLocation" x="22.5" y="648.5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

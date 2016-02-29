@@ -6,15 +6,15 @@
 //  Copyright © 2016 26775. All rights reserved.
 //
 
-#import "ViewControllerStartup.h"
-#import "ViewController1.h"
+#import "StartupViewController.h"
+#import "ImgProcVController.h"
 #import "UIImage+operation.h"
 
-@interface ViewControllerStartup ()
+@interface StartupViewController ()
     @property (strong, nonatomic) UIImage* takenImage;
 @end
 
-@implementation ViewControllerStartup
+@implementation StartupViewController
 
 @synthesize takenImage;
 
@@ -136,7 +136,7 @@
     // Pass the selected object to the new view controller.
     if([segue.identifier isEqualToString:@"loadViewController1"]){
 
-        ViewController1 *imgProcView = segue.destinationViewController;
+        ImgProcessController *imgProcView = segue.destinationViewController;
         imgProcView.takenImage = self.takenImage;
         imgProcView.resultView.image=[self takenImage];
         imgProcView.processedImage=[self takenImage ];

@@ -16,7 +16,7 @@
 		0E20427715824F35009D88F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E20427615824F35009D88F2 /* main.m */; };
 		0E20427B15824F35009D88F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E20427A15824F35009D88F2 /* AppDelegate.m */; };
 		0E20427E15824F35009D88F2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E20427C15824F35009D88F2 /* MainStoryboard.storyboard */; };
-		0E20428115824F35009D88F2 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E20428015824F35009D88F2 /* ViewController1.m */; };
+		0E20428115824F35009D88F2 /* ImgProcVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E20428015824F35009D88F2 /* ImgProcVController.m */; };
 		0E20429015824FF5009D88F2 /* ImageProcessingImplementation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0E20428D15824FF5009D88F2 /* ImageProcessingImplementation.mm */; };
 		0E20429115824FF5009D88F2 /* ImageProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E20428E15824FF5009D88F2 /* ImageProcessor.cpp */; };
 		0E20429815825303009D88F2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E20429715825303009D88F2 /* AVFoundation.framework */; };
@@ -27,7 +27,7 @@
 		0E2042A715825613009D88F2 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0E2042A615825612009D88F2 /* UIImage+OpenCV.mm */; };
 		0E74049215825A5E006AE2B4 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 0E74049115825A5E006AE2B4 /* tessdata */; };
 		482C9DB517B138770080E8D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 482C9DB417B138770080E8D8 /* Default-568h@2x.png */; };
-		AC07999F1C838EE800087C8D /* ViewControllerStartup.m in Sources */ = {isa = PBXBuildFile; fileRef = AC07999E1C838EE800087C8D /* ViewControllerStartup.m */; };
+		AC07999F1C838EE800087C8D /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC07999E1C838EE800087C8D /* StartupViewController.m */; };
 		AC5D9FFF1C6A9B8F00AA1F52 /* maine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC5D9FFE1C6A9B8F00AA1F52 /* maine.jpg */; };
 		AC8331851C7BE9EB00596B6A /* key.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC8331841C7BE9EB00596B6A /* key.txt */; };
 		ACFCC9D11C83AB7E0067C92E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFCC9D01C83AB7E0067C92E /* Assets.xcassets */; };
@@ -47,8 +47,8 @@
 		0E20427915824F35009D88F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E20427A15824F35009D88F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0E20427D15824F35009D88F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		0E20427F15824F35009D88F2 /* ViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
-		0E20428015824F35009D88F2 /* ViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		0E20427F15824F35009D88F2 /* ImgProcVController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImgProcVController.h; sourceTree = "<group>"; };
+		0E20428015824F35009D88F2 /* ImgProcVController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImgProcVController.m; sourceTree = "<group>"; };
 		0E20428B15824FF5009D88F2 /* ImageProcessingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageProcessingProtocol.h; sourceTree = "<group>"; };
 		0E20428C15824FF5009D88F2 /* ImageProcessingImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageProcessingImplementation.h; sourceTree = "<group>"; };
 		0E20428D15824FF5009D88F2 /* ImageProcessingImplementation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageProcessingImplementation.mm; sourceTree = "<group>"; };
@@ -64,8 +64,8 @@
 		0E74049115825A5E006AE2B4 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		482C9DB417B138770080E8D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6442C35B3A894F23BF9DB1A8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC07999D1C838EE800087C8D /* ViewControllerStartup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerStartup.h; sourceTree = "<group>"; };
-		AC07999E1C838EE800087C8D /* ViewControllerStartup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerStartup.m; sourceTree = "<group>"; };
+		AC07999D1C838EE800087C8D /* StartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupViewController.h; sourceTree = "<group>"; };
+		AC07999E1C838EE800087C8D /* StartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
 		AC5D9FFE1C6A9B8F00AA1F52 /* maine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maine.jpg; sourceTree = "<group>"; };
 		AC8331841C7BE9EB00596B6A /* key.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.txt; sourceTree = "<group>"; };
 		ACFCC9D01C83AB7E0067C92E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,10 +136,10 @@
 				0E20427915824F35009D88F2 /* AppDelegate.h */,
 				0E20427A15824F35009D88F2 /* AppDelegate.m */,
 				0E20427C15824F35009D88F2 /* MainStoryboard.storyboard */,
-				0E20427F15824F35009D88F2 /* ViewController1.h */,
-				0E20428015824F35009D88F2 /* ViewController1.m */,
-				AC07999D1C838EE800087C8D /* ViewControllerStartup.h */,
-				AC07999E1C838EE800087C8D /* ViewControllerStartup.m */,
+				0E20427F15824F35009D88F2 /* ImgProcVController.h */,
+				0E20428015824F35009D88F2 /* ImgProcVController.m */,
+				AC07999D1C838EE800087C8D /* StartupViewController.h */,
+				AC07999E1C838EE800087C8D /* StartupViewController.m */,
 				0E20428B15824FF5009D88F2 /* ImageProcessingProtocol.h */,
 				0E20428C15824FF5009D88F2 /* ImageProcessingImplementation.h */,
 				0E20428D15824FF5009D88F2 /* ImageProcessingImplementation.mm */,
@@ -300,10 +300,10 @@
 			files = (
 				0E20427715824F35009D88F2 /* main.m in Sources */,
 				0E20427B15824F35009D88F2 /* AppDelegate.m in Sources */,
-				0E20428115824F35009D88F2 /* ViewController1.m in Sources */,
+				0E20428115824F35009D88F2 /* ImgProcVController.m in Sources */,
 				0E20429015824FF5009D88F2 /* ImageProcessingImplementation.mm in Sources */,
 				0E20429115824FF5009D88F2 /* ImageProcessor.cpp in Sources */,
-				AC07999F1C838EE800087C8D /* ViewControllerStartup.m in Sources */,
+				AC07999F1C838EE800087C8D /* StartupViewController.m in Sources */,
 				0E2042A715825613009D88F2 /* UIImage+OpenCV.mm in Sources */,
 				0E0ECC151583681400116FAE /* UIImage+operation.m in Sources */,
 			);

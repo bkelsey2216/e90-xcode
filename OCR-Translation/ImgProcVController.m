@@ -5,16 +5,16 @@
 //  Created by Paolo Tagliani on 08/06/12.
 //  Copyright (c) 2012 26775. All rights reserved.
 //
-#import "ViewController1.h"
+#import "ImgProcVController.h"
 #import "ImageProcessingImplementation.h"
 #import "UIImage+operation.h"
 #import "FGTranslator.h"
 
-@interface ViewController1 ()
+@interface ImgProcessController ()
 
 @end
 
-@implementation ViewController1
+@implementation ImgProcessController
 
 
 @synthesize takenImage;

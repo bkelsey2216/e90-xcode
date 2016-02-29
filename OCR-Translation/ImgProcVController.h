@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ImageProcessingProtocol.h"
 
-@interface ViewController1 : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>{
+@interface ImgProcessController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>{
     UIImagePickerController *mediaPicker;
     UIImage *takenImage;
     UIImage *processedImage;
