@@ -17,7 +17,7 @@
                                 <rect key="frame" x="100" y="319" width="174" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Take Photo">
+                                <state key="normal" title="Photo Library">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -224,6 +224,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Qmo-Fv-zwe"/>
+        <segue reference="o9j-aD-ffJ"/>
     </inferredMetricsTieBreakers>
 </document>
