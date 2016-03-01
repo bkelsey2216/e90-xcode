@@ -94,49 +94,53 @@
     FGTranslator *translator = [[FGTranslator alloc] initWithGoogleAPIKey:key];
     translator.preferSourceGuess = NO;
     
-//    [FGTranslator flushCache];
+    [FGTranslator flushCache];
     
     NSString *ocr_result=[imageProcessor OCRImage:[self processedImage]];
     
     NSString* source_lang = @"en";
-    NSString* dest_lang = @"de";
+    NSString* dest_lang = @"es";
 
     // Google translate gives wrong results for strings that are in all caps -- convert to lowercase
     NSString* translation_input = ocr_result.lowercaseString;
+    
+//    NSString* translation_input = @"Hello World";
     
     NSLog(@"before calling translator block");
     
     NSLog(translation_input);
     
-    __block NSMutableString* translation_result = [NSMutableString stringWithString:@"I'm in main!."];
-    
+    // make translation result a member variable
+    // race condition with worker_queue being destroyed before HTTP request returns
     dispatch_queue_t worker_queue = dispatch_queue_create("My Queue",NULL);
     dispatch_async(worker_queue, ^{
         // Perform long running process
-        
-        sleep(1);
-        translation_result = [NSMutableString stringWithString:@"Now I'm not."];
-        
+
+        // translator only wants to run on the main thread??
         [translator translateText:translation_input
                        withSource:source_lang
                            target:dest_lang
                        completion:^(NSError *error, NSString *translated, NSString *sourceLanguage)
-                                      {if (error){
-                                          NSLog(@"translation failed with error: %@", error);
-                                          translation_result = [NSMutableString stringWithString:@"It didn't do the thing.."];
-                                      }else{
-                                          NSLog(@"translated from %@: %@", sourceLanguage, translated);
-                                          translation_result = [NSMutableString stringWithString:translated];
-                                      }}
-             
+                        {if (error){
+                                  NSLog(@"translation failed with error: %@", error);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[[UIAlertView alloc] initWithTitle:@""
+                                    message:[NSString stringWithFormat:@"Translation Failed\n%@", error]
+                                   delegate:nil
+                          cancelButtonTitle:nil
+                          otherButtonTitles:@"OK", nil] show]; });
+            
+                              }else{
+                                  NSLog(@"translated from %@: %@", sourceLanguage, translated);
+          dispatch_async(dispatch_get_main_queue(), ^{
+              [[[UIAlertView alloc] initWithTitle:@""
+                                          message:[NSString stringWithFormat:@"Translation Successful!\n%@", translated]
+                                         delegate:nil
+                                cancelButtonTitle:nil
+                                otherButtonTitles:@"OK", nil] show]; });
+                              }}
+         
         ];
-     
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            [[[UIAlertView alloc] initWithTitle:@""
-                                    message:[NSString stringWithFormat:@"Recognized:\n%@", translation_result]
-                                    delegate:nil
-                            cancelButtonTitle:nil
-                            otherButtonTitles:@"OK", nil] show]; });
         
     });
 

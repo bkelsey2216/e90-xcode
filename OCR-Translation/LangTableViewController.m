@@ -12,6 +12,7 @@
 @interface LangTableViewController ()
 
 @property (strong, nonatomic) NSArray *colors;
+@property (strong, nonatomic) NSArray *colorLabels;
 
 @end
 
@@ -60,6 +61,7 @@
     return [self.colors count];
 }
 
+
 - (NSArray *)colors
 {
     if (!_colors) {
@@ -68,18 +70,41 @@
                         [UIColor cyanColor],
                         [UIColor yellowColor],
                         [UIColor magentaColor],
+                        [UIColor greenColor],
                         [UIColor purpleColor],
                         [UIColor brownColor],
                         [UIColor redColor],
                         [UIColor grayColor],
                         [UIColor whiteColor],
                         [UIColor orangeColor]];
+
     }
     return _colors;
 }
 
+- (NSArray *)colorLabels
+{
+    if (!_colorLabels) {
+        self.colorLabels = @[@"blue",
+                             @"light gray",
+                             @"cyan",
+                             @"yellow",
+                             @"magenta",
+                             @"green",
+                             @"purple",
+                             @"brown",
+                             @"red",
+                             @"gray",
+                             @"white",
+                             @"orange"];
+        
+    }
+    return _colorLabels;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     self.selectedColor = self.colors[indexPath.row];
     [self performSegueWithIdentifier:@"colorSelected" sender:self];
 }
@@ -88,7 +113,16 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"colorCell" forIndexPath:indexPath];
     
+//    UILabel *label;
+//    label.textAlignment = UITextAlignmentCenter;
+//    label.backgroundColor = self.colors[indexPath.row];
+//    label.textColor = [UIColor blackColor];
+//    label.font = [UIFont fontWithName:@"Verdana" size:14];
+//    label.text = @"label";
+    
     cell.contentView.backgroundColor = self.colors[indexPath.row];
+    
+//    [cell.contentView addSubview:label];
     
     return cell;
 }

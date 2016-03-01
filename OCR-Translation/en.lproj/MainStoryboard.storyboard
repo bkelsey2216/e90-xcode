@@ -207,7 +207,7 @@
             <objects>
                 <viewController storyboardIdentifier="languageSelect" title="languageView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a5b-9g-acE" customClass="LanguageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tZo-ca-gPu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xU1-OX-JE3">
