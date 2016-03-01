@@ -132,8 +132,8 @@
 
         ImgProcessController *imgProcView = segue.destinationViewController;
         imgProcView.takenImage = self.takenImage;
-        imgProcView.resultView.image=[self takenImage];
-        imgProcView.processedImage=[self takenImage ];
+//        imgProcView.resultView.image=[self takenImage];
+//        imgProcView.processedImage=[self takenImage ];
     }
 }
 

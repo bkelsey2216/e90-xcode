@@ -16,6 +16,7 @@
 }
 
 
+@property (strong, nonatomic) UIColor *backgroundColor; // for unwind demo -- take out later
 @property (strong, nonatomic) IBOutlet UIButton *process;
 @property (strong, nonatomic) IBOutlet UIImageView *resultView;
 @property (strong, nonatomic) id <ImageProcessingProtocol> imageProcessor;
@@ -28,6 +29,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *BinarizeButton;
 @property (strong, nonatomic) IBOutlet UIButton *originalButton;
 @property (strong, nonatomic) IBOutlet UIButton *confirmLanguage;
+@property (strong, nonatomic) IBOutlet UIButton *takeNewPhoto;
+
 
 //- (IBAction)TakePhoto:(id)sender;
 - (IBAction)Pre:(id)sender;
@@ -38,6 +41,7 @@
 - (IBAction)PreBinarize:(id)sender;
 - (IBAction)returnOriginal:(id)sender;
 - (IBAction)confirmLanguage:(id)sender;
+- (IBAction)takeNewPhoto:(id)sender;
 
 // ChooseMedia doesn't exist anymore:
 //- (IBAction)ChooseMedia:(id)sender;

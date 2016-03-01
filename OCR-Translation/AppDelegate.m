@@ -24,7 +24,7 @@
 
     self.currViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"startupView"];
     self.navigationController  = [[UINavigationController alloc] initWithRootViewController:self.currViewController];
-    
+    self.navigationController.navigationBarHidden=YES;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setRootViewController:self.currViewController];
     [self.window addSubview:self.navigationController.view];

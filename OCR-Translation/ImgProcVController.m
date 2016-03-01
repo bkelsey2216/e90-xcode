@@ -7,6 +7,8 @@
 //
 #import "ImgProcVController.h"
 #import "LanguageViewController.h"
+#import "StartupViewController.h"
+#import "LangTableViewController.h"
 #import "ImageProcessingImplementation.h"
 #import "UIImage+operation.h"
 #import "FGTranslator.h"
@@ -37,32 +39,16 @@
     
     self.title = @"Process Image";
 
+    self.resultView.image = self.takenImage;
+    self.processedImage=[self takenImage ];
     NSLog(@"inside viewDidLoad");
 
 }
-
-// next 2 functions are for switching between 2 view controllers
-//- (void)goBack{
-//    [self.navigationController popViewControllerAnimated:YES];
-//}
 
 - (void)viewDidAppear:(BOOL)paramAnimated{
     [super viewDidAppear:paramAnimated];
     
     NSLog(@"inside viewDidAppear");
-    
-    self.resultView.image = self.takenImage;
-//    NSString *filename = [[NSBundle mainBundle]
-//                          pathForResource:@"maine" ofType:@"jpg"];
-//    
-//    
-//    
-//    UIImage *input_image = [UIImage imageWithContentsOfFile:filename];
-//    resultView.image = input_image;
-    
-//    [self performSelector:@selector(goBack)
-//               withObject:nil
-//               afterDelay:5.0f];
 }
 
 - (void)viewDidUnload
@@ -108,7 +94,7 @@
     FGTranslator *translator = [[FGTranslator alloc] initWithGoogleAPIKey:key];
     translator.preferSourceGuess = NO;
     
-    [FGTranslator flushCache];
+//    [FGTranslator flushCache];
     
     NSString *ocr_result=[imageProcessor OCRImage:[self processedImage]];
     
@@ -131,19 +117,19 @@
         sleep(1);
         translation_result = [NSMutableString stringWithString:@"Now I'm not."];
         
-//        [translator translateText:translation_input
-//                       withSource:source_lang
-//                           target:dest_lang
-//                       completion:^(NSError *error, NSString *translated, NSString *sourceLanguage)
-//                                      {if (error){
-//                                          NSLog(@"translation failed with error: %@", error);
-//                                          translation_result = [NSMutableString stringWithString:@"Now we fucked up."];
-//                                      }else{
-//                                          NSLog(@"translated from %@: %@", sourceLanguage, translated);
-//                                          translation_result = [NSMutableString stringWithString:translated];
-//                                      }}
-//             
-//        ];
+        [translator translateText:translation_input
+                       withSource:source_lang
+                           target:dest_lang
+                       completion:^(NSError *error, NSString *translated, NSString *sourceLanguage)
+                                      {if (error){
+                                          NSLog(@"translation failed with error: %@", error);
+                                          translation_result = [NSMutableString stringWithString:@"It didn't do the thing.."];
+                                      }else{
+                                          NSLog(@"translated from %@: %@", sourceLanguage, translated);
+                                          translation_result = [NSMutableString stringWithString:translated];
+                                      }}
+             
+        ];
      
         dispatch_sync(dispatch_get_main_queue(), ^{
             [[[UIAlertView alloc] initWithTitle:@""
@@ -154,12 +140,6 @@
         
     });
 
-    
-//    [[[UIAlertView alloc] initWithTitle:@""
-//                                message:[NSString stringWithFormat:@"Recognized:\n%@", ocr_result]
-//                               delegate:nil
-//                      cancelButtonTitle:nil
-//                      otherButtonTitles:@"OK", nil] show];
 }
 
 - (IBAction)PreRotation:(id)sender {
@@ -194,7 +174,14 @@
 
 - (IBAction)confirmLanguage:(id)sender {
     
-    [self performSegueWithIdentifier:@"selectLanguage" sender:self];
+//    [self performSegueWithIdentifier:@"selectLanguage" sender:self];
+    [self performSegueWithIdentifier:@"loadTableView" sender:self];
+}
+
+- (IBAction)takeNewPhoto:(id)sender{
+    
+    //    [self performSegueWithIdentifier:@"selectLanguage" sender:self];
+    [self performSegueWithIdentifier:@"takeNewPhoto" sender:self];
 }
 
 // TakePhoto is now handled in ViewControlStartup!!
@@ -277,19 +264,60 @@
 //    
 //}
 
+
+// FOR THE UNWIND DEMO - take out if needed
+- (IBAction)unwindFromModalViewController:(UIStoryboardSegue *)segue
+{
+    if ([segue.sourceViewController isKindOfClass:[LangTableViewController class]]) {
+        LangTableViewController *langTableViewConroller = segue.sourceViewController;
+        // if the user clicked Cancel, we don't want to change the color
+        if (langTableViewConroller.selectedColor) {
+            self.view.backgroundColor = langTableViewConroller.selectedColor;
+        }
+    }
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+    _backgroundColor = backgroundColor;
+    self.view.backgroundColor = backgroundColor;
+}
+
 #pragma mark - Navigation
+
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if([segue.identifier isEqualToString:@"loadTableView"]){
+        NSLog(@"preparing table view segue");
+        LangTableViewController *langTableView = segue.destinationViewController;
+        langTableView.takenImage = [self processedImage];
+        
+        
+        // if user hits cancel, don't update the color
+        // ...except there is no cancel button...
+        if (langTableView.selectedColor) {
+            self.view.backgroundColor = langTableView.selectedColor;
+        }
+    }
     
     if([segue.identifier isEqualToString:@"selectLanguage"]){
         
         LanguageViewController *langView = segue.destinationViewController;
         
         //send the selected language back to imgProc view controller?
-        langView.takenImage = [self takenImage];
+        langView.takenImage = [self processedImage];
         // set parameters for language view here
     }
+    
+    if([segue.identifier isEqualToString:@"takeNewPhoto"]){
+        
+        StartupViewController *startView = segue.destinationViewController;
+
+        // set parameters for language view here
+    }
+    
     //   Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
