@@ -22,7 +22,6 @@
     [super viewDidLoad];
     
     self.title = @"Language Options";
-    NSLog(@"inside language table view class");
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"colorCell"];
     [self.tableView setContentInset:UIEdgeInsetsMake(50,0,0,0)];
     // Uncomment the following line to preserve selection between presentations.
@@ -34,9 +33,6 @@
 
 - (void)viewDidAppear:(BOOL)paramAnimated{
     [super viewDidAppear:paramAnimated];
-    
-    NSLog(@"inside language table view did appear");
-
 }
 
 
@@ -62,6 +58,7 @@
 {
     if (!_langLabels) {
         self.langLabels = @[@"Chinese",
+                            @"English",
                             @"French",
                             @"German",
                             @"Italian",
@@ -77,6 +74,7 @@
 {
     if (!_langCodes) {
         self.langCodes = @[@"zh",
+                           @"en",
                            @"fr",
                            @"de",
                            @"it",

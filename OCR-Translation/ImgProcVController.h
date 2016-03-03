@@ -15,8 +15,6 @@
     UIImage *processedImage;
 }
 
-
-@property (strong, nonatomic) UIColor *backgroundColor; // for unwind demo -- take out later
 @property (strong, nonatomic) IBOutlet UITextField *destLanguage;
 @property (strong, nonatomic) NSString *destLangCode;
 @property (strong, nonatomic) NSString *destLangLabel;

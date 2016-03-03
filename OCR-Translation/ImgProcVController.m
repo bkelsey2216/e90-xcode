@@ -14,6 +14,8 @@
 
 @interface ImgProcessController ()
 
+@property (strong, nonatomic) NSArray *errorList;
+
 @end
 
 @implementation ImgProcessController
@@ -43,21 +45,16 @@
         self.destLangLabel = @"English";
         self.destLangCode = @"en";
     }
-    
-    NSLog(self.destLangLabel);
-    NSLog(self.destLangCode);
-    
+        
     self.destLanguage.text = self.destLangLabel;
     self.resultView.image = self.takenImage;
     self.processedImage=[self takenImage ];
-    
-    NSLog(@"inside viewDidLoad");
+
 }
 
 - (void)viewDidAppear:(BOOL)paramAnimated{
     [super viewDidAppear:paramAnimated];
 
-    NSLog(@"inside viewDidAppear");
 }
 
 - (void)viewDidUnload
@@ -93,6 +90,19 @@
     
 }
 
+- (NSArray *)errorList
+{
+    if (!_errorList) {
+        self.errorList = @[@"Translation Error\n Unable to Translate - maybe the source and destination languages are the same?",
+                           @"Translation Error\n Network error.",
+                           @"Translation Error\n Same - maybe the source and destination languages are the same?",
+                           @"Translation Error\n Another translation is already in progress.",
+                           @"Translation Error\n Already translated.",
+                           @"Translation Error\n Invalid credentials - go bug the developers."];
+    }
+    return _errorList;
+}
+
 - (IBAction)OCR:(id)sender {
     
     NSString* path = [[NSBundle mainBundle] pathForResource:@"key"
@@ -108,19 +118,11 @@
     
     NSString *ocr_result=[imageProcessor OCRImage:[self processedImage]];
     
-    NSString* source_lang = @"en";
+    NSString* source_lang = nil;
     NSString* dest_lang = self.destLangCode;
 
     // Google translate gives wrong results for strings that are in all caps -- convert to lowercase
     NSString* translation_input = ocr_result.lowercaseString;
-    
-    NSLog(@"before calling translator block");
-
-    NSLog(self.destLangLabel);
-    NSLog(self.destLangCode);
-    
-//    NSLog(dest_lang);
-//    NSLog(translation_input);
     
     dispatch_queue_t worker_queue = dispatch_queue_create("My Queue",NULL);
     dispatch_async(worker_queue, ^{
@@ -133,12 +135,13 @@
                                   NSLog(@"translation failed with error: %@", error);
     dispatch_async(dispatch_get_main_queue(), ^{
         [[[UIAlertView alloc] initWithTitle:@""
-                                    message:[NSString stringWithFormat:@"Translation Failed\n%@", error]
+                                    message:self.errorList[error.code]
                                    delegate:nil
                           cancelButtonTitle:nil
                           otherButtonTitles:@"OK", nil] show]; });
             
-                              }else{
+                              }
+                        else{
                                   NSLog(@"translated from %@: %@", sourceLanguage, translated);
           dispatch_async(dispatch_get_main_queue(), ^{
               [[[UIAlertView alloc] initWithTitle:@""
@@ -193,32 +196,6 @@
 }
 
 
-// FOR THE UNWIND DEMO - take out if needed
-- (IBAction)unwindFromModalViewController:(UIStoryboardSegue *)segue
-{
-    if ([segue.sourceViewController isKindOfClass:[LangTableViewController class]]) {
-        LangTableViewController *langTableViewConroller = segue.sourceViewController;
-        // if the user clicked Cancel, we don't want to change the color
-        if (langTableViewConroller.selectedLanguage) {
-            self.destLanguage.text = langTableViewConroller.selectedLanguage;
-            self.destLangCode = langTableViewConroller.selectedLangCode;
-        }
-    }
-}
-
-- (void)setBackgroundColor:(UIColor *)backgroundColor
-              destLanguage:(NSString*)destLanguage
-              destLangCode:(NSString*)destLangCode
-
-{
-    _backgroundColor = backgroundColor;
-    _destLanguage.text = destLanguage;
-    _destLangCode = destLangCode;
-    self.view.backgroundColor = backgroundColor;
-
-}
-
-
 #pragma mark - Navigation
 
 
@@ -232,7 +209,6 @@
         LangTableViewController *langTableView = segue.destinationViewController;
         langTableView.takenImage = [self processedImage];
         
-
     }
     
     if([segue.identifier isEqualToString:@"newPhoto"]){
