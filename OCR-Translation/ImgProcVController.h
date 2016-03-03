@@ -17,6 +17,9 @@
 
 
 @property (strong, nonatomic) UIColor *backgroundColor; // for unwind demo -- take out later
+@property (strong, nonatomic) IBOutlet UITextField *destLanguage;
+@property (strong, nonatomic) NSString *destLangCode;
+@property (strong, nonatomic) NSString *destLangLabel;
 @property (strong, nonatomic) IBOutlet UIButton *process;
 @property (strong, nonatomic) IBOutlet UIImageView *resultView;
 @property (strong, nonatomic) id <ImageProcessingProtocol> imageProcessor;

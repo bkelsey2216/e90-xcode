@@ -18,8 +18,6 @@
 
 @synthesize takenImage;
 
-// Use button to get to next view - save incase we want to do this later
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,13 +29,6 @@
     [super viewDidAppear:YES];
     
     self.title = @"Choose Photo";
-
-// Respond to displayNextView button press - save incase we want to do this later
-//    [self.displayNextView
-//     addTarget:self action:@selector(performDisplayNextView:)forControlEvents:UIControlEventTouchUpInside];
-//    
-//    [self.view addSubview:self.displayNextView];
-    
 }
 
 
@@ -112,11 +103,8 @@
     
     self.takenImage = [UIImage imageWithCGImage:ref];
     
-    if(self.takenImage == nil)
-        NSLog(@"image picker is nil");
-    
     // send the selected photo to the image processing view controller.
-    [self performSegueWithIdentifier:@"loadViewController1" sender:self];
+    [self performSegueWithIdentifier:@"translateMain" sender:self];
     
 }
 
@@ -128,12 +116,10 @@
     
   //   Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if([segue.identifier isEqualToString:@"loadViewController1"]){
+    if([segue.identifier isEqualToString:@"translateMain"]){
 
         ImgProcessController *imgProcView = segue.destinationViewController;
         imgProcView.takenImage = self.takenImage;
-//        imgProcView.resultView.image=[self takenImage];
-//        imgProcView.processedImage=[self takenImage ];
     }
 }
 

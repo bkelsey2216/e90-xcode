@@ -11,6 +11,7 @@
 @interface LangTableViewController : UITableViewController
 
 @property (strong, nonatomic) UIImage *takenImage;
-@property (strong, nonatomic) UIColor *selectedColor;
+@property (strong, nonatomic) NSString *selectedLanguage;
+@property (strong, nonatomic) NSString *selectedLangCode;
 
 @end

@@ -11,8 +11,8 @@
 
 @interface LangTableViewController ()
 
-@property (strong, nonatomic) NSArray *colors;
-@property (strong, nonatomic) NSArray *colorLabels;
+@property (strong, nonatomic) NSArray *langLabels;
+@property (strong, nonatomic) NSArray *langCodes;
 
 @end
 
@@ -24,6 +24,7 @@
     self.title = @"Language Options";
     NSLog(@"inside language table view class");
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"colorCell"];
+    [self.tableView setContentInset:UIEdgeInsetsMake(50,0,0,0)];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -47,10 +48,6 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
     return 1;
 }
 
@@ -58,72 +55,55 @@
 
     //#warning Incomplete implementation, return the number of rows
     //return 0;
-    return [self.colors count];
+    return [self.langLabels count];
 }
 
-
-- (NSArray *)colors
+- (NSArray *)langLabels
 {
-    if (!_colors) {
-        self.colors = @[[UIColor blueColor],
-                        [UIColor lightGrayColor],
-                        [UIColor cyanColor],
-                        [UIColor yellowColor],
-                        [UIColor magentaColor],
-                        [UIColor greenColor],
-                        [UIColor purpleColor],
-                        [UIColor brownColor],
-                        [UIColor redColor],
-                        [UIColor grayColor],
-                        [UIColor whiteColor],
-                        [UIColor orangeColor]];
-
-    }
-    return _colors;
-}
-
-- (NSArray *)colorLabels
-{
-    if (!_colorLabels) {
-        self.colorLabels = @[@"blue",
-                             @"light gray",
-                             @"cyan",
-                             @"yellow",
-                             @"magenta",
-                             @"green",
-                             @"purple",
-                             @"brown",
-                             @"red",
-                             @"gray",
-                             @"white",
-                             @"orange"];
+    if (!_langLabels) {
+        self.langLabels = @[@"Chinese",
+                            @"French",
+                            @"German",
+                            @"Italian",
+                            @"Japanese",
+                            @"Latin",
+                            @"Spanish"];
         
     }
-    return _colorLabels;
+    return _langLabels;
+}
+
+- (NSArray *)langCodes
+{
+    if (!_langCodes) {
+        self.langCodes = @[@"zh",
+                           @"fr",
+                           @"de",
+                           @"it",
+                           @"ja",
+                           @"la",
+                           @"es"];
+        
+    }
+    return _langCodes;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    self.selectedColor = self.colors[indexPath.row];
-    [self performSegueWithIdentifier:@"colorSelected" sender:self];
+    self.selectedLanguage = self.langLabels[indexPath.row];
+    self.selectedLangCode = self.langCodes[indexPath.row];
+    [self performSegueWithIdentifier:@"langSelected" sender:self];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"colorCell" forIndexPath:indexPath];
     
-//    UILabel *label;
-//    label.textAlignment = UITextAlignmentCenter;
-//    label.backgroundColor = self.colors[indexPath.row];
-//    label.textColor = [UIColor blackColor];
-//    label.font = [UIFont fontWithName:@"Verdana" size:14];
-//    label.text = @"label";
-    
-    cell.contentView.backgroundColor = self.colors[indexPath.row];
-    
-//    [cell.contentView addSubview:label];
-    
+    cell.contentView.backgroundColor = [UIColor clearColor];
+    cell.textLabel.text = self.langLabels[indexPath.row];
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.textLabel.textAlignment = UITextAlignmentCenter;
     return cell;
 }
 
@@ -133,8 +113,9 @@
        ImgProcessController *mainViewController = segue.destinationViewController;
        mainViewController.takenImage = [self takenImage];
 
-       if (self.selectedColor) {
-            mainViewController.backgroundColor = self.selectedColor;
+       if (self.selectedLanguage) {
+           mainViewController.destLangLabel = self.selectedLanguage;
+           mainViewController.destLangCode = self.selectedLangCode;
        }
     }
 }
