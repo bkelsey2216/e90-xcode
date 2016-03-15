@@ -44,7 +44,7 @@
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:
-                                      @"Take a photo or choose existing, and use the control to center the announce"
+                                      @"Take a photo or choose existing, and center the text in the window."
                                                                  delegate: self                                                  cancelButtonTitle:@"Cancel"
                                                    destructiveButtonTitle:nil
                                                         otherButtonTitles:@"Take photo", @"Choose Existing", nil];

@@ -14,7 +14,7 @@
 }
 
 // button for manually switching to next view - save incase we want to do this later
-//@property (strong, nonatomic) IBOutlet UIButton *displayNextView;
+// @property (strong, nonatomic) IBOutlet UIButton *displayNextView;
 
 
 - (IBAction)TakePhoto:(id)sender;
