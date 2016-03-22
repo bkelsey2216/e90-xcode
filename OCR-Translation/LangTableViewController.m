@@ -50,7 +50,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     //#warning Incomplete implementation, return the number of rows
-    //return 0;
     return [self.langLabels count];
 }
 
@@ -65,7 +64,6 @@
                             @"Japanese",
                             @"Latin",
                             @"Spanish"];
-        
     }
     return _langLabels;
 }
@@ -81,7 +79,6 @@
                            @"ja",
                            @"la",
                            @"es"];
-        
     }
     return _langCodes;
 }
