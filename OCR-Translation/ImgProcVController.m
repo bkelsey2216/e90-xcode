@@ -82,10 +82,10 @@
 
 - (IBAction)Pre:(id)sender {
     
-    NSLog(@"Dimension taken image: %f x %f",takenImage.size.width, takenImage.size.height);
+    //NSLog(@"Dimension taken image: %f x %f",takenImage.size.width, takenImage.size.height);
     self.processedImage=[imageProcessor processImage:[self takenImage]];
     self.resultView.image=[self processedImage];
-    NSLog(@"Dimension processed image: %f x %f",takenImage.size.width, takenImage.size.height);
+    //NSLog(@"Dimension processed image: %f x %f",takenImage.size.width, takenImage.size.height);
 
     
 }
@@ -116,6 +116,10 @@
     
     [FGTranslator flushCache];
     
+    // preprocess the image
+    self.processedImage=[imageProcessor processImage:[self takenImage]];
+    
+    // run the OCR
     NSString *ocr_result=[imageProcessor OCRImage:[self processedImage]];
     
     NSString* source_lang = nil;
@@ -124,36 +128,44 @@
     // Google translate gives wrong results for strings that are in all caps -- convert to lowercase
     NSString* translation_input = ocr_result.lowercaseString;
     
-    dispatch_queue_t worker_queue = dispatch_queue_create("My Queue",NULL);
-    dispatch_async(worker_queue, ^{
-
-        [translator translateText:translation_input
-                       withSource:source_lang
-                           target:dest_lang
-                       completion:^(NSError *error, NSString *translated, NSString *sourceLanguage)
-                        {if (error){
-                                  NSLog(@"translation failed with error: %@", error);
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[[UIAlertView alloc] initWithTitle:@""
-                                    message:self.errorList[error.code]
-                                   delegate:nil
-                          cancelButtonTitle:nil
-                          otherButtonTitles:@"OK", nil] show]; });
-            
-                              }
-                        else{
-                                  NSLog(@"translated from %@: %@", sourceLanguage, translated);
-          dispatch_async(dispatch_get_main_queue(), ^{
-              [[[UIAlertView alloc] initWithTitle:@""
-                                          message:[NSString stringWithFormat:@"Translation Successful!\n%@", translated]
-                                         delegate:nil
-                                cancelButtonTitle:nil
-                                otherButtonTitles:@"OK", nil] show]; });
-                              }}
-         
-        ];
-        
-    });
+    
+    [[[UIAlertView alloc] initWithTitle:@""
+                                message:translation_input
+                               delegate:nil
+                      cancelButtonTitle:nil
+                      otherButtonTitles:@"OK", nil] show];
+    
+    
+//    dispatch_queue_t worker_queue = dispatch_queue_create("My Queue",NULL);
+//    dispatch_async(worker_queue, ^{
+//
+//        [translator translateText:translation_input
+//                       withSource:source_lang
+//                           target:dest_lang
+//                       completion:^(NSError *error, NSString *translated, NSString *sourceLanguage)
+//                        {if (error){
+//                                  NSLog(@"translation failed with error: %@", error);
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [[[UIAlertView alloc] initWithTitle:@""
+//                                    message:self.errorList[error.code]
+//                                   delegate:nil
+//                          cancelButtonTitle:nil
+//                          otherButtonTitles:@"OK", nil] show]; });
+//            
+//                              }
+//                        else{
+//                                  NSLog(@"translated from %@: %@", sourceLanguage, translated);
+//          dispatch_async(dispatch_get_main_queue(), ^{
+//              [[[UIAlertView alloc] initWithTitle:@""
+//                                          message:[NSString stringWithFormat:@"Translation Successful!\n%@", translated]
+//                                         delegate:nil
+//                                cancelButtonTitle:nil
+//                                otherButtonTitles:@"OK", nil] show]; });
+//                              }}
+//         
+//        ];
+//        
+//    });
 
 }
 
@@ -207,14 +219,11 @@
     
     if([segue.identifier isEqualToString:@"selectLanguage"]){
         LangTableViewController *langTableView = segue.destinationViewController;
-        langTableView.takenImage = [self processedImage];
-        
+        langTableView.takenImage = [self takenImage];
     }
     
     if([segue.identifier isEqualToString:@"newPhoto"]){
-
         StartupViewController *startView = segue.destinationViewController;
-        
     }
     
 

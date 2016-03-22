@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1a-lw-3wd">
-                                <rect key="frame" x="78" y="269" width="174" height="30"/>
+                                <rect key="frame" x="78" y="263" width="174" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Photo Library">
+                                <state key="normal" title="Get Photo">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.77596452797674476" green="0.86563574818465516" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96870097802740629" green="0.95691723852499289" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="U1a-lw-3wd" firstAttribute="centerY" secondItem="hrI-dX-X0O" secondAttribute="centerY" id="Iyh-Jq-OHj"/>
                             <constraint firstItem="U1a-lw-3wd" firstAttribute="centerX" secondItem="hrI-dX-X0O" secondAttribute="centerX" id="dzw-YW-daT"/>
@@ -41,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ols-cp-emg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-550.5" y="658.5"/>
+            <point key="canvasLocation" x="-543" y="626"/>
         </scene>
         <!--processView-->
         <scene sceneID="5">
@@ -236,7 +236,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqW-NU-egp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-97.5" y="1594.5"/>
+            <point key="canvasLocation" x="376" y="626"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
