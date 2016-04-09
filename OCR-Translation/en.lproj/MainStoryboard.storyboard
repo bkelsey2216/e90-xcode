@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="D9e-qC-Woe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="D9e-qC-Woe">
     <dependencies>
         <deployment version="2336" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,22 +20,24 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1a-lw-3wd">
                                 <rect key="frame" x="78" y="263" width="174" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="5" maxX="15" maxY="7"/>
                                 <state key="normal" title="Get Photo">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="1" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="TakePhoto:" destination="D9e-qC-Woe" eventType="touchUpInside" id="6lM-Te-Oii"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.96870097802740629" green="0.95691723852499289" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.058823529411764705" green="0.0" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="U1a-lw-3wd" firstAttribute="centerY" secondItem="hrI-dX-X0O" secondAttribute="centerY" id="Iyh-Jq-OHj"/>
                             <constraint firstItem="U1a-lw-3wd" firstAttribute="centerX" secondItem="hrI-dX-X0O" secondAttribute="centerX" id="dzw-YW-daT"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="getPhoto" destination="U1a-lw-3wd" id="p5m-45-XGU"/>
                         <segue destination="2" kind="modal" identifier="translateMain" id="o9j-aD-ffJ"/>
                     </connections>
                 </viewController>
@@ -55,72 +57,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1R-Db-Ryn">
-                                <rect key="frame" x="21" y="347" width="105" height="37"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Take photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="TakePhoto:" destination="2" eventType="touchUpInside" id="xrr-Ez-pzd"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d03-9w-TzN">
-                                <rect key="frame" x="122" y="408" width="86" height="37"/>
-                                <color key="backgroundColor" red="0.57203489878009095" green="0.68211763749195464" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Rotation">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="PreRotation:" destination="2" eventType="touchUpInside" id="WzA-VJ-z0c"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8p-31-1rq">
-                                <rect key="frame" x="216" y="408" width="99" height="37"/>
-                                <color key="backgroundColor" red="0.58039215686274515" green="0.85490196078431369" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Histogram">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="PreHistogram:" destination="2" eventType="touchUpInside" id="eG1-7c-gAj"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxT-rY-ft4">
-                                <rect key="frame" x="136" y="458" width="72" height="37"/>
-                                <color key="backgroundColor" red="0.46651273939999999" green="1" blue="0.76783405449999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Filter">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="PreFilter:" destination="2" eventType="touchUpInside" id="YJa-Nv-7af"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCv-38-UEb">
-                                <rect key="frame" x="230" y="459" width="83" height="37"/>
-                                <color key="backgroundColor" red="0.76413228237228803" green="0.59589567553641909" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Binarize">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="PreBinarize:" destination="2" eventType="touchUpInside" id="WQS-ny-sh4"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOv-tc-3iQ">
-                                <rect key="frame" x="25" y="408" width="81" height="37"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Original">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="returnOriginal:" destination="2" eventType="touchUpInside" id="pd0-wK-hvr"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJn-mc-mc5">
                                 <rect key="frame" x="5" y="28" width="308" height="372"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,6 +65,7 @@
                                 <rect key="frame" x="40" y="408" width="113" height="37"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <state key="normal" title="Pre-Process">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -136,14 +73,17 @@
                                     <action selector="Pre:" destination="2" eventType="touchUpInside" id="HnU-ff-Qmb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxP-V9-xjF">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxP-V9-xjF">
                                 <rect key="frame" x="25" y="463" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfh-yx-XyG">
                                 <rect key="frame" x="162" y="463" width="132" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <state key="normal" title="Change Language"/>
                                 <connections>
                                     <action selector="confirmLanguage:" destination="2" eventType="touchUpInside" id="8yN-Nj-a1q"/>
@@ -153,6 +93,7 @@
                                 <rect key="frame" x="196" y="408" width="79" height="37"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <state key="normal" title="Translate!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -163,6 +104,7 @@
                             <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS6-aQ-Goc">
                                 <rect key="frame" x="99" y="518" width="125" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <state key="normal" title="New Photo">
                                     <color key="titleColor" red="1" green="0.03853393712709996" blue="0.6420362554952459" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 </state>
@@ -171,7 +113,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.058823529411764705" green="0.0" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9Hl-cS-QkL" firstAttribute="top" secondItem="pS6-aQ-Goc" secondAttribute="bottom" constant="40" id="1XV-sU-Keu"/>
@@ -182,7 +124,6 @@
                             <constraint firstItem="wfh-yx-XyG" firstAttribute="top" secondItem="ZVF-Md-wld" secondAttribute="bottom" priority="900" constant="12" id="G5M-mQ-Gdu"/>
                             <constraint firstItem="DJn-mc-mc5" firstAttribute="top" secondItem="YjJ-SV-oh5" secondAttribute="bottom" priority="800" constant="20" id="O34-y1-fWa"/>
                             <constraint firstItem="pS6-aQ-Goc" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="83" id="R4w-mS-4eZ"/>
-                            <constraint firstItem="pS6-aQ-Goc" firstAttribute="top" secondItem="qxT-rY-ft4" secondAttribute="bottom" constant="23" id="ZKI-48-F7p"/>
                             <constraint firstItem="pS6-aQ-Goc" firstAttribute="top" secondItem="zxP-V9-xjF" secondAttribute="bottom" priority="900" constant="20" id="byK-F3-xSA"/>
                             <constraint firstAttribute="trailing" secondItem="DJn-mc-mc5" secondAttribute="trailing" constant="20" id="eZI-3e-cP2"/>
                             <constraint firstItem="ZVF-Md-wld" firstAttribute="top" secondItem="DJn-mc-mc5" secondAttribute="bottom" constant="5" id="ebI-TZ-IOU"/>
@@ -197,16 +138,11 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="BinarizeButton" destination="dCv-38-UEb" id="WBB-SG-vWy"/>
-                        <outlet property="FilterButton" destination="qxT-rY-ft4" id="q2v-fJ-v0A"/>
-                        <outlet property="Histogrambutton" destination="H8p-31-1rq" id="Cin-GV-ju7"/>
                         <outlet property="confirmLanguage" destination="wfh-yx-XyG" id="AqO-du-a37"/>
                         <outlet property="destLanguage" destination="zxP-V9-xjF" id="9FV-b6-lSj"/>
-                        <outlet property="originalButton" destination="qOv-tc-3iQ" id="pw5-6T-qMX"/>
                         <outlet property="process" destination="FPW-yi-NCT" id="HBt-yk-RDl"/>
                         <outlet property="read" destination="ZVF-Md-wld" id="rws-zp-ZZL"/>
                         <outlet property="resultView" destination="DJn-mc-mc5" id="yb8-Ls-uAK"/>
-                        <outlet property="rotateButton" destination="d03-9w-TzN" id="mFL-p3-0b5"/>
                         <outlet property="takeNewPhoto" destination="pS6-aQ-Goc" id="h5q-Cl-tKW"/>
                         <segue destination="M3X-Mi-5e4" kind="modal" identifier="selectLanguage" id="XjL-4a-KOj"/>
                         <segue destination="D9e-qC-Woe" kind="modal" identifier="newPhoto" id="qe7-ZS-S40"/>
@@ -224,6 +160,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.058823529411764705" green="0.0" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="M3X-Mi-5e4" id="WaA-eA-SSg"/>
                             <outlet property="delegate" destination="M3X-Mi-5e4" id="mhY-f4-fgF"/>

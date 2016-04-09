@@ -24,11 +24,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *read;
 @property (strong,nonatomic) UIImage *takenImage;
 @property (strong,nonatomic) UIImage *processedImage;
-@property (strong, nonatomic) IBOutlet UIButton *rotateButton;
-@property (strong, nonatomic) IBOutlet UIButton *Histogrambutton;
-@property (strong, nonatomic) IBOutlet UIButton *FilterButton;
-@property (strong, nonatomic) IBOutlet UIButton *BinarizeButton;
-@property (strong, nonatomic) IBOutlet UIButton *originalButton;
 @property (strong, nonatomic) IBOutlet UIButton *confirmLanguage;
 @property (strong, nonatomic) IBOutlet UIButton *takeNewPhoto;
 
@@ -36,11 +31,7 @@
 //- (IBAction)TakePhoto:(id)sender;
 - (IBAction)Pre:(id)sender;
 - (IBAction)OCR:(id)sender;
-- (IBAction)PreRotation:(id)sender;
-- (IBAction)PreHistogram:(id)sender;
-- (IBAction)PreFilter:(id)sender;
-- (IBAction)PreBinarize:(id)sender;
-- (IBAction)returnOriginal:(id)sender;
+
 - (IBAction)confirmLanguage:(id)sender;
 - (IBAction)takeNewPhoto:(id)sender;
 

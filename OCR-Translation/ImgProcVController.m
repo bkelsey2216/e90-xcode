@@ -27,11 +27,9 @@
 @synthesize imageProcessor;
 @synthesize read;
 @synthesize processedImage;
-@synthesize rotateButton;
-@synthesize Histogrambutton;
-@synthesize FilterButton;
-@synthesize BinarizeButton;
-@synthesize originalButton;
+@synthesize confirmLanguage;
+@synthesize takeNewPhoto;
+
 
 - (void)viewDidLoad
 {
@@ -39,7 +37,11 @@
     imageProcessor= [[ImageProcessingImplementation alloc]  init];    
     
     self.title = @"Process Image";
-
+    [self designButton:read NSString:@"Translate"];
+    [self designButton:process NSString:@"Pre-Process"];
+    [self designButton:confirmLanguage NSString:@"Change Language"];
+    [self designButton:takeNewPhoto NSString:@"New Photo"];
+    
     
     if (self.destLangLabel == nil){
         self.destLangLabel = @"English";
@@ -63,12 +65,6 @@
     [self setResultView:nil];
     [self setProcess:nil];
     [self setRead:nil];
-    [self setRotateButton:nil];
-    [self setRotateButton:nil];
-    [self setHistogrambutton:nil];
-    [self setFilterButton:nil];
-    [self setBinarizeButton:nil];
-    [self setOriginalButton:nil];
     [super viewDidUnload];
 
 }
@@ -79,6 +75,20 @@
     if(interfaceOrientation == UIInterfaceOrientationPortrait) return YES;
     else return NO;
 }
+
+
+-(void)designButton:(UIButton*)button
+           NSString:label{
+    [button setTitle:label forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor clearColor]];
+    [button setTitleColor:[UIColor colorWithRed:0 green:1 blue:0.698 alpha:1] forState:UIControlStateNormal];
+    [button.titleLabel setFont:[UIFont fontWithName:@"Kohinoor Telugu" size:24.0]];
+    button.layer.borderWidth = 3;
+    button.layer.borderColor = [[UIColor colorWithRed:0 green:1 blue:0.698 alpha:1] CGColor];
+    button.layer.cornerRadius = 10;
+    
+}
+
 
 - (IBAction)Pre:(id)sender {
     
@@ -161,35 +171,6 @@
 
 }
 
-- (IBAction)PreRotation:(id)sender {
-    
-    self.processedImage=[imageProcessor processRotation:[self processedImage]];
-    self.resultView.image=[self processedImage];
-}
-
-- (IBAction)PreHistogram:(id)sender {
-    
-    self.processedImage=[imageProcessor processHistogram:[self processedImage]];
-    self.resultView.image=[self processedImage];
-}
-
-- (IBAction)PreFilter:(id)sender {
-    
-    self.processedImage=[imageProcessor processFilter:[self processedImage]];
-    self.resultView.image=[self processedImage];
-}
-
-- (IBAction)PreBinarize:(id)sender {
-    
-    self.processedImage=[imageProcessor processBinarize:[self processedImage]];
-    self.resultView.image=[self processedImage];
-}
-
-- (IBAction)returnOriginal:(id)sender {
-    
-    self.processedImage=[self takenImage ];
-    self.resultView.image= [self takenImage];
-}
 
 - (IBAction)confirmLanguage:(id)sender {
     [self performSegueWithIdentifier:@"selectLanguage" sender:self];
@@ -212,6 +193,7 @@
     if([segue.identifier isEqualToString:@"selectLanguage"]){
         LangTableViewController *langTableView = segue.destinationViewController;
         langTableView.takenImage = [self takenImage];
+        langTableView.view.backgroundColor = [UIColor colorWithRed:0.059 green:0 blue:0.118 alpha:1];
     }
     
     if([segue.identifier isEqualToString:@"newPhoto"]){

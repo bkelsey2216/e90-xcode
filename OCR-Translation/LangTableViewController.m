@@ -95,9 +95,11 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"colorCell" forIndexPath:indexPath];
     
-    cell.contentView.backgroundColor = [UIColor clearColor];
+    cell.contentView.backgroundColor = [UIColor colorWithRed:0.059 green:0 blue:0.118 alpha:1];
     cell.textLabel.text = self.langLabels[indexPath.row];
-    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.textLabel.textColor = [UIColor colorWithRed:0 green:1 blue:0.698 alpha:1];
+    cell.textLabel.font = [UIFont fontWithName:@"Kohinoor Telugu" size:18.0];
+    cell.textLabel.backgroundColor = [UIColor colorWithRed:0.059 green:0 blue:0.118 alpha:1];
     cell.textLabel.textAlignment = UITextAlignmentCenter;
     return cell;
 }
