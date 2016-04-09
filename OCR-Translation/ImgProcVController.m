@@ -50,6 +50,8 @@
         
     self.destLanguage.text = self.destLangLabel;
     self.resultView.image = self.takenImage;
+    self.resultView.layer.borderWidth = 1;
+    self.resultView.layer.borderColor = [[UIColor colorWithRed:0 green:1 blue:0.698 alpha:1] CGColor];
     self.processedImage=[self takenImage];
 
 }

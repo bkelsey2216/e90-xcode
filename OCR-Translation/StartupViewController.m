@@ -88,7 +88,7 @@
     
     UIView *overlay= [[UIView alloc]
                       initWithFrame:CGRectMake
-                      (0, 0, self.view.frame.size.width, self.view.frame.size.height*0.10)];//width equal and height 15%
+                      (0, 0, self.view.frame.size.width, self.view.frame.size.height)];//width equal and height 15%
     overlay.backgroundColor=[UIColor blackColor];
     overlay.alpha=0.5;
     
