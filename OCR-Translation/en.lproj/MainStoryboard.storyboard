@@ -61,8 +61,8 @@
                                 <rect key="frame" x="5" y="28" width="308" height="372"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPW-yi-NCT">
-                                <rect key="frame" x="40" y="408" width="113" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPW-yi-NCT">
+                                <rect key="frame" x="5" y="408" width="113" height="37"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -74,14 +74,14 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxP-V9-xjF">
-                                <rect key="frame" x="25" y="463" width="97" height="30"/>
+                                <rect key="frame" x="5" y="463" width="97" height="30"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfh-yx-XyG">
-                                <rect key="frame" x="162" y="463" width="132" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfh-yx-XyG">
+                                <rect key="frame" x="123" y="466" width="132" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <state key="normal" title="Change Language"/>
@@ -89,8 +89,8 @@
                                     <action selector="confirmLanguage:" destination="2" eventType="touchUpInside" id="8yN-Nj-a1q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVF-Md-wld">
-                                <rect key="frame" x="196" y="408" width="79" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVF-Md-wld">
+                                <rect key="frame" x="181" y="408" width="79" height="37"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -101,8 +101,8 @@
                                     <action selector="OCR:" destination="2" eventType="touchUpInside" id="3Lm-Fw-hyr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS6-aQ-Goc">
-                                <rect key="frame" x="99" y="518" width="125" height="30"/>
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS6-aQ-Goc">
+                                <rect key="frame" x="98" y="512" width="125" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <state key="normal" title="New Photo">
@@ -116,20 +116,19 @@
                         <color key="backgroundColor" red="0.058823529411764705" green="0.0" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9Hl-cS-QkL" firstAttribute="top" secondItem="pS6-aQ-Goc" secondAttribute="bottom" constant="40" id="1XV-sU-Keu"/>
-                            <constraint firstItem="zxP-V9-xjF" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" constant="-70" id="40x-0W-BLa"/>
-                            <constraint firstItem="wfh-yx-XyG" firstAttribute="leading" secondItem="zxP-V9-xjF" secondAttribute="trailing" constant="16" id="66F-Cd-3ec"/>
-                            <constraint firstItem="ZVF-Md-wld" firstAttribute="leading" secondItem="FPW-yi-NCT" secondAttribute="trailing" constant="43" id="6Ax-Sr-CBD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pS6-aQ-Goc" secondAttribute="trailing" constant="80" id="FVy-6y-YeZ"/>
-                            <constraint firstItem="wfh-yx-XyG" firstAttribute="top" secondItem="ZVF-Md-wld" secondAttribute="bottom" priority="900" constant="12" id="G5M-mQ-Gdu"/>
+                            <constraint firstItem="9Hl-cS-QkL" firstAttribute="top" secondItem="pS6-aQ-Goc" secondAttribute="bottom" constant="50" id="1XV-sU-Keu"/>
+                            <constraint firstItem="zxP-V9-xjF" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" constant="-80" id="40x-0W-BLa"/>
+                            <constraint firstItem="ZVF-Md-wld" firstAttribute="leading" secondItem="FPW-yi-NCT" secondAttribute="trailing" constant="30" id="6Ax-Sr-CBD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pS6-aQ-Goc" secondAttribute="trailing" constant="70" id="FVy-6y-YeZ"/>
+                            <constraint firstItem="wfh-yx-XyG" firstAttribute="top" secondItem="ZVF-Md-wld" secondAttribute="bottom" priority="800" constant="30" id="G5M-mQ-Gdu"/>
                             <constraint firstItem="DJn-mc-mc5" firstAttribute="top" secondItem="YjJ-SV-oh5" secondAttribute="bottom" priority="800" constant="20" id="O34-y1-fWa"/>
-                            <constraint firstItem="pS6-aQ-Goc" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="83" id="R4w-mS-4eZ"/>
-                            <constraint firstItem="pS6-aQ-Goc" firstAttribute="top" secondItem="zxP-V9-xjF" secondAttribute="bottom" priority="900" constant="20" id="byK-F3-xSA"/>
+                            <constraint firstItem="pS6-aQ-Goc" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="70" id="R4w-mS-4eZ"/>
+                            <constraint firstItem="pS6-aQ-Goc" firstAttribute="top" secondItem="zxP-V9-xjF" secondAttribute="bottom" constant="45" id="byK-F3-xSA"/>
                             <constraint firstAttribute="trailing" secondItem="DJn-mc-mc5" secondAttribute="trailing" constant="20" id="eZI-3e-cP2"/>
                             <constraint firstItem="ZVF-Md-wld" firstAttribute="top" secondItem="DJn-mc-mc5" secondAttribute="bottom" constant="5" id="ebI-TZ-IOU"/>
-                            <constraint firstItem="pS6-aQ-Goc" firstAttribute="top" secondItem="wfh-yx-XyG" secondAttribute="bottom" priority="900" constant="20" id="hXq-2G-pZb"/>
+                            <constraint firstItem="pS6-aQ-Goc" firstAttribute="top" secondItem="wfh-yx-XyG" secondAttribute="bottom" constant="40" id="hXq-2G-pZb"/>
                             <constraint firstItem="FPW-yi-NCT" firstAttribute="top" secondItem="DJn-mc-mc5" secondAttribute="bottom" constant="5" id="krR-Jc-53w"/>
-                            <constraint firstItem="zxP-V9-xjF" firstAttribute="top" secondItem="FPW-yi-NCT" secondAttribute="bottom" priority="900" constant="12" id="sm1-Bn-sxf"/>
+                            <constraint firstItem="zxP-V9-xjF" firstAttribute="top" secondItem="FPW-yi-NCT" secondAttribute="bottom" priority="800" constant="30" id="sm1-Bn-sxf"/>
                             <constraint firstItem="DJn-mc-mc5" firstAttribute="leading" secondItem="3" secondAttribute="leading" priority="900" constant="20" id="v7Y-f5-p4Z"/>
                             <constraint firstItem="FPW-yi-NCT" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" constant="-64" id="xlJ-9R-M2T"/>
                         </constraints>

@@ -50,7 +50,7 @@
         
     self.destLanguage.text = self.destLangLabel;
     self.resultView.image = self.takenImage;
-    self.processedImage=[self takenImage ];
+    self.processedImage=[self takenImage];
 
 }
 
@@ -82,7 +82,7 @@
     [button setTitle:label forState:UIControlStateNormal];
     [button setBackgroundColor:[UIColor clearColor]];
     [button setTitleColor:[UIColor colorWithRed:0 green:1 blue:0.698 alpha:1] forState:UIControlStateNormal];
-    [button.titleLabel setFont:[UIFont fontWithName:@"Kohinoor Telugu" size:24.0]];
+    [button.titleLabel setFont:[UIFont fontWithName:@"Kohinoor Telugu" size:20.0]];
     button.layer.borderWidth = 3;
     button.layer.borderColor = [[UIColor colorWithRed:0 green:1 blue:0.698 alpha:1] CGColor];
     button.layer.cornerRadius = 10;
