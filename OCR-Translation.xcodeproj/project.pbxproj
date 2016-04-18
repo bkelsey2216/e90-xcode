@@ -359,6 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PROVISIONING_PROFILE = "6a6f4e6e-c98a-4e34-86fd-dc8bd6431e0a";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -379,6 +380,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "6a6f4e6e-c98a-4e34-86fd-dc8bd6431e0a";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -395,6 +397,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCR-Translation/OCR-Translation-Prefix.pch";
 				INFOPLIST_FILE = "OCR-Translation/OCR-Translation-Info.plist";
@@ -418,6 +421,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCR-Translation/OCR-Translation-Prefix.pch";
 				INFOPLIST_FILE = "OCR-Translation/OCR-Translation-Info.plist";

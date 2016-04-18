@@ -56,30 +56,40 @@
 - (NSArray *)langLabels
 {
     if (!_langLabels) {
-        self.langLabels = @[@"Chinese",
+        self.langLabels = @[@"Arabic",
+                            @"Chinese",
                             @"English",
                             @"French",
                             @"German",
                             @"Italian",
                             @"Japanese",
+                            @"Korean",
                             @"Latin",
-                            @"Spanish"];
+                            @"Polish",
+                            @"Spanish",
+                            @"Welsh"];
     }
+    
     return _langLabels;
 }
 
 - (NSArray *)langCodes
 {
     if (!_langCodes) {
-        self.langCodes = @[@"zh",
+        self.langCodes = @[@"ar",
+                           @"zh",
                            @"en",
                            @"fr",
                            @"de",
                            @"it",
                            @"ja",
+                           @"ko",
                            @"la",
-                           @"es"];
+                           @"pl",
+                           @"es",
+                           @"cy"];
     }
+    
     return _langCodes;
 }
 

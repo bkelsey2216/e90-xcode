@@ -3,6 +3,8 @@
     <dependencies>
         <deployment version="2336" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -57,8 +59,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPW-yi-NCT">
-                                <rect key="frame" x="5" y="408" width="113" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPW-yi-NCT">
+                                <rect key="frame" x="20" y="384" width="121" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="7e4-a1-bSx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -69,15 +74,18 @@
                                     <action selector="Pre:" destination="2" eventType="touchUpInside" id="HnU-ff-Qmb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxP-V9-xjF">
-                                <rect key="frame" x="5" y="463" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxP-V9-xjF">
+                                <rect key="frame" x="25" y="444" width="97" height="28"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="oRX-al-AAg"/>
+                                </constraints>
                                 <color key="textColor" red="0.0" green="1" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfh-yx-XyG">
-                                <rect key="frame" x="123" y="466" width="132" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfh-yx-XyG">
+                                <rect key="frame" x="133" y="461" width="167" height="28"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <state key="normal" title="Change Language"/>
@@ -85,8 +93,29 @@
                                     <action selector="confirmLanguage:" destination="2" eventType="touchUpInside" id="8yN-Nj-a1q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVF-Md-wld">
-                                <rect key="frame" x="181" y="408" width="79" height="37"/>
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS6-aQ-Goc">
+                                <rect key="frame" x="90" y="502" width="140" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="KUf-uQ-gxF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <state key="normal" title="New Photo">
+                                    <color key="titleColor" red="1" green="0.03853393712709996" blue="0.6420362554952459" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="takeNewPhoto:" destination="2" eventType="touchUpInside" id="JvH-ry-eVn"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="DJn-mc-mc5">
+                                <rect key="frame" x="0.0" y="36" width="320" height="307"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVF-Md-wld">
+                                <rect key="frame" x="201" y="384" width="99" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="31a-oz-0ei"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -97,40 +126,29 @@
                                     <action selector="OCR:" destination="2" eventType="touchUpInside" id="3Lm-Fw-hyr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS6-aQ-Goc">
-                                <rect key="frame" x="98" y="512" width="125" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                <state key="normal" title="New Photo">
-                                    <color key="titleColor" red="1" green="0.03853393712709996" blue="0.6420362554952459" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="takeNewPhoto:" destination="2" eventType="touchUpInside" id="JvH-ry-eVn"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJn-mc-mc5">
-                                <rect key="frame" x="0.0" y="36" width="320" height="320"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.058823529411764705" green="0.0" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9Hl-cS-QkL" firstAttribute="top" secondItem="pS6-aQ-Goc" secondAttribute="bottom" constant="50" id="1XV-sU-Keu"/>
-                            <constraint firstItem="zxP-V9-xjF" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" constant="-80" id="40x-0W-BLa"/>
-                            <constraint firstItem="ZVF-Md-wld" firstAttribute="leading" secondItem="FPW-yi-NCT" secondAttribute="trailing" constant="30" id="6Ax-Sr-CBD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pS6-aQ-Goc" secondAttribute="trailing" constant="70" id="FVy-6y-YeZ"/>
-                            <constraint firstItem="wfh-yx-XyG" firstAttribute="top" secondItem="ZVF-Md-wld" secondAttribute="bottom" priority="800" constant="30" id="G5M-mQ-Gdu"/>
-                            <constraint firstItem="DJn-mc-mc5" firstAttribute="top" secondItem="YjJ-SV-oh5" secondAttribute="bottom" priority="800" constant="20" id="O34-y1-fWa"/>
-                            <constraint firstItem="pS6-aQ-Goc" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="70" id="R4w-mS-4eZ"/>
-                            <constraint firstItem="pS6-aQ-Goc" firstAttribute="top" secondItem="zxP-V9-xjF" secondAttribute="bottom" constant="45" id="byK-F3-xSA"/>
-                            <constraint firstAttribute="trailing" secondItem="DJn-mc-mc5" secondAttribute="trailing" constant="20" id="eZI-3e-cP2"/>
-                            <constraint firstItem="ZVF-Md-wld" firstAttribute="top" secondItem="DJn-mc-mc5" secondAttribute="bottom" constant="5" id="ebI-TZ-IOU"/>
-                            <constraint firstItem="pS6-aQ-Goc" firstAttribute="top" secondItem="wfh-yx-XyG" secondAttribute="bottom" constant="40" id="hXq-2G-pZb"/>
-                            <constraint firstItem="FPW-yi-NCT" firstAttribute="top" secondItem="DJn-mc-mc5" secondAttribute="bottom" constant="5" id="krR-Jc-53w"/>
-                            <constraint firstItem="zxP-V9-xjF" firstAttribute="top" secondItem="FPW-yi-NCT" secondAttribute="bottom" priority="800" constant="30" id="sm1-Bn-sxf"/>
-                            <constraint firstItem="DJn-mc-mc5" firstAttribute="leading" secondItem="3" secondAttribute="leading" priority="900" constant="20" id="v7Y-f5-p4Z"/>
-                            <constraint firstItem="FPW-yi-NCT" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" constant="-64" id="xlJ-9R-M2T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wfh-yx-XyG" secondAttribute="trailing" id="0t5-1Q-ErK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZVF-Md-wld" secondAttribute="trailing" constant="4" id="86i-by-z7a"/>
+                            <constraint firstItem="zxP-V9-xjF" firstAttribute="baseline" secondItem="wfh-yx-XyG" secondAttribute="baseline" constant="-5" id="8nO-YS-0Ke"/>
+                            <constraint firstItem="DJn-mc-mc5" firstAttribute="centerX" secondItem="pS6-aQ-Goc" secondAttribute="centerX" id="AOt-jr-WOh"/>
+                            <constraint firstItem="pS6-aQ-Goc" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="74" id="HeK-YF-GB9"/>
+                            <constraint firstItem="pS6-aQ-Goc" firstAttribute="top" secondItem="wfh-yx-XyG" secondAttribute="bottom" constant="23" id="OGY-KV-5Wy"/>
+                            <constraint firstItem="FPW-yi-NCT" firstAttribute="top" secondItem="ZVF-Md-wld" secondAttribute="top" id="Pzy-iq-I7d"/>
+                            <constraint firstItem="wfh-yx-XyG" firstAttribute="leading" secondItem="zxP-V9-xjF" secondAttribute="trailing" constant="7" id="Q37-zP-F4L"/>
+                            <constraint firstItem="zxP-V9-xjF" firstAttribute="left" secondItem="DJn-mc-mc5" secondAttribute="left" constant="25" id="U7R-uZ-Omm"/>
+                            <constraint firstItem="DJn-mc-mc5" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="aJ2-0q-8mc"/>
+                            <constraint firstItem="FPW-yi-NCT" firstAttribute="top" secondItem="DJn-mc-mc5" secondAttribute="bottom" constant="41" id="eZI-9x-MWN"/>
+                            <constraint firstItem="ZVF-Md-wld" firstAttribute="baseline" secondItem="FPW-yi-NCT" secondAttribute="firstBaseline" id="gMl-SS-zPi"/>
+                            <constraint firstItem="DJn-mc-mc5" firstAttribute="top" secondItem="YjJ-SV-oh5" secondAttribute="bottom" constant="16" id="heY-yq-9Mm"/>
+                            <constraint firstItem="ZVF-Md-wld" firstAttribute="leading" secondItem="FPW-yi-NCT" secondAttribute="trailing" constant="60" id="lhx-pS-Yjj"/>
+                            <constraint firstItem="9Hl-cS-QkL" firstAttribute="top" secondItem="pS6-aQ-Goc" secondAttribute="bottom" constant="30" id="tda-EC-Rsp"/>
+                            <constraint firstAttribute="trailing" secondItem="DJn-mc-mc5" secondAttribute="trailing" id="uUW-lN-KRR"/>
+                            <constraint firstItem="FPW-yi-NCT" firstAttribute="baseline" secondItem="ZVF-Md-wld" secondAttribute="firstBaseline" id="vjv-tm-LLS"/>
+                            <constraint firstItem="FPW-yi-NCT" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="4" id="y6Y-39-GS0"/>
+                            <constraint firstItem="zxP-V9-xjF" firstAttribute="top" secondItem="FPW-yi-NCT" secondAttribute="bottom" constant="23" id="yto-Ko-xxK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uOa-gI-Jkg"/>
