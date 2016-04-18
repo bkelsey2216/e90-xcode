@@ -29,6 +29,7 @@
     [self.window setRootViewController:self.currViewController];
     [self.window addSubview:self.navigationController.view];
     [self.window makeKeyAndVisible];
+
     
     // Override point for customization after application launch.
     return YES;

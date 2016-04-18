@@ -32,6 +32,11 @@
     self.title = @"Choose Photo";
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 -(void)designButton:(UIButton*)button{
     [button setTitle:@"Get Photo" forState:UIControlStateNormal];
     [button setBackgroundColor:[UIColor clearColor]];
