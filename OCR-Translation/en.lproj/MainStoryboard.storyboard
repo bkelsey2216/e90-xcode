@@ -59,8 +59,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPW-yi-NCT">
-                                <rect key="frame" x="20" y="384" width="121" height="37"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPW-yi-NCT">
+                                <rect key="frame" x="20" y="384" width="30" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="7e4-a1-bSx"/>
                                 </constraints>
@@ -112,7 +112,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVF-Md-wld">
-                                <rect key="frame" x="201" y="384" width="99" height="37"/>
+                                <rect key="frame" x="110" y="384" width="99" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="99" id="31a-oz-0ei"/>
                                 </constraints>
@@ -131,7 +131,7 @@
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="wfh-yx-XyG" secondAttribute="trailing" id="0t5-1Q-ErK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZVF-Md-wld" secondAttribute="trailing" constant="4" id="86i-by-z7a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZVF-Md-wld" secondAttribute="trailing" constant="95" id="86i-by-z7a"/>
                             <constraint firstItem="zxP-V9-xjF" firstAttribute="baseline" secondItem="wfh-yx-XyG" secondAttribute="baseline" constant="-5" id="8nO-YS-0Ke"/>
                             <constraint firstItem="DJn-mc-mc5" firstAttribute="centerX" secondItem="pS6-aQ-Goc" secondAttribute="centerX" id="AOt-jr-WOh"/>
                             <constraint firstItem="pS6-aQ-Goc" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="74" id="HeK-YF-GB9"/>
