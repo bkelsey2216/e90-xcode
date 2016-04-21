@@ -59,21 +59,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPW-yi-NCT">
-                                <rect key="frame" x="20" y="384" width="30" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="7e4-a1-bSx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                <state key="normal" title="Pre-Process">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Pre:" destination="2" eventType="touchUpInside" id="HnU-ff-Qmb"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxP-V9-xjF">
                                 <rect key="frame" x="25" y="444" width="97" height="28"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -113,8 +98,8 @@
                                 <rect key="frame" x="0.0" y="36" width="320" height="307"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVF-Md-wld">
-                                <rect key="frame" x="110" y="384" width="99" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVF-Md-wld">
+                                <rect key="frame" x="179" y="384" width="99" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="99" id="31a-oz-0ei"/>
                                 </constraints>
@@ -129,12 +114,27 @@
                                     <action selector="OCR:" destination="2" eventType="touchUpInside" id="3Lm-Fw-hyr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPW-yi-NCT">
+                                <rect key="frame" x="37" y="384" width="111" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="7e4-a1-bSx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <state key="normal" title="Pre-Process">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="Pre:" destination="2" eventType="touchUpInside" id="HnU-ff-Qmb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.058823529411764705" green="0.0" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="wfh-yx-XyG" secondAttribute="trailing" id="0t5-1Q-ErK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZVF-Md-wld" secondAttribute="trailing" constant="95" id="86i-by-z7a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZVF-Md-wld" secondAttribute="trailing" constant="22" id="86i-by-z7a"/>
                             <constraint firstItem="zxP-V9-xjF" firstAttribute="baseline" secondItem="wfh-yx-XyG" secondAttribute="baseline" constant="-5" id="8nO-YS-0Ke"/>
                             <constraint firstItem="DJn-mc-mc5" firstAttribute="centerX" secondItem="pS6-aQ-Goc" secondAttribute="centerX" id="AOt-jr-WOh"/>
                             <constraint firstItem="pS6-aQ-Goc" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="74" id="HeK-YF-GB9"/>
@@ -146,11 +146,11 @@
                             <constraint firstItem="FPW-yi-NCT" firstAttribute="top" secondItem="DJn-mc-mc5" secondAttribute="bottom" constant="41" id="eZI-9x-MWN"/>
                             <constraint firstItem="ZVF-Md-wld" firstAttribute="baseline" secondItem="FPW-yi-NCT" secondAttribute="firstBaseline" id="gMl-SS-zPi"/>
                             <constraint firstItem="DJn-mc-mc5" firstAttribute="top" secondItem="YjJ-SV-oh5" secondAttribute="bottom" constant="16" id="heY-yq-9Mm"/>
-                            <constraint firstItem="ZVF-Md-wld" firstAttribute="leading" secondItem="FPW-yi-NCT" secondAttribute="trailing" constant="60" id="lhx-pS-Yjj"/>
+                            <constraint firstItem="ZVF-Md-wld" firstAttribute="leading" secondItem="FPW-yi-NCT" secondAttribute="trailing" constant="31" id="lhx-pS-Yjj"/>
                             <constraint firstItem="9Hl-cS-QkL" firstAttribute="top" secondItem="pS6-aQ-Goc" secondAttribute="bottom" constant="30" id="tda-EC-Rsp"/>
                             <constraint firstAttribute="trailing" secondItem="DJn-mc-mc5" secondAttribute="trailing" id="uUW-lN-KRR"/>
                             <constraint firstItem="FPW-yi-NCT" firstAttribute="baseline" secondItem="ZVF-Md-wld" secondAttribute="firstBaseline" id="vjv-tm-LLS"/>
-                            <constraint firstItem="FPW-yi-NCT" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="4" id="y6Y-39-GS0"/>
+                            <constraint firstItem="FPW-yi-NCT" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="10" id="y6Y-39-GS0"/>
                             <constraint firstItem="zxP-V9-xjF" firstAttribute="top" secondItem="FPW-yi-NCT" secondAttribute="bottom" constant="23" id="yto-Ko-xxK"/>
                         </constraints>
                     </view>

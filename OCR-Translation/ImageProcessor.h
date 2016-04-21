@@ -58,6 +58,8 @@ public:
      as parameter
      */
     cv::Mat rotateImage(const cv::Mat& source, double angle);
+    
+
 
 };
 
