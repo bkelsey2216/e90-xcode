@@ -77,7 +77,7 @@ int ImageProcessor::correctRotation(cv::Mat &image, cv::Mat &output, float heigh
     float irho = 1.0/8.0;
     int h = image.rows;
     int w = image.cols;
-    int num_thetas = 256;
+    int num_thetas = 128;
     int cx = w*0.5;
     int cy = h*0.5;
     
@@ -117,12 +117,16 @@ int ImageProcessor::correctRotation(cv::Mat &image, cv::Mat &output, float heigh
     // Part 1 - build the histogram
     int min_bin;
     int max_bin;
+    float sum_time = 0.0;
     // j is columns, i is rows
     for(int k = 0; k < num_thetas; k++){
         min_bin = 10000;
         max_bin = 0;
-        for(int i = 0; i < h; i++){
-            for(int j = 0; j < w; j++){
+        clock_t t;
+        t = clock();
+        printf ("Calculating num theta %d...\n", k);
+        for(int i = 0; i < h; i = i + 3){
+            for(int j = 0; j < w; j = j + 3){
                 unsigned char pixel = iter[text_edges.step * i + j];
                 if( ((int)pixel) == 255){
                     int bindex = (-(j-cx)*sin(thetas[k]) + (i-cy)*cos(thetas[k]))*irho + 0.5*bin_max;
@@ -138,7 +142,14 @@ int ImageProcessor::correctRotation(cv::Mat &image, cv::Mat &output, float heigh
                 }
             }
         }
+        t = clock() - t;
+        sum_time = sum_time + ((float)t)/CLOCKS_PER_SEC;
+        printf ("It took me %d clicks (%f seconds).\n", t, ((float)t)/CLOCKS_PER_SEC);
     }
+    
+    printf("\n\nTotal Preprocessing time: %f\n", sum_time);
+    printf("\n\nNumber of Pixels: %d\n", h*w);
+    printf("\n\nNumber of Thetas: %d\n", num_thetas);
     
     // Part 2 - pick best angle (theta with max num zeros)
     // indexing: hist[k][bin]
