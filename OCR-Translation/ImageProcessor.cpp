@@ -72,7 +72,7 @@ int ImageProcessor::correctRotation(cv::Mat &image, cv::Mat &output, float heigh
    
     cv::Mat text_edges;
     cv::Size si(0,0);
-    std::vector<cv::Vec4i> lines;
+   
     
     float irho = 1.0/8.0;
     int h = image.rows;
@@ -110,46 +110,73 @@ int ImageProcessor::correctRotation(cv::Mat &image, cv::Mat &output, float heigh
             hist[i][j] = 0;
         }
     }
+
     
-    unsigned char *iter = (unsigned char*)(text_edges.data);
+    // new method:
+    /*
+     
+     std::vector of <cv::Point>
+     for each y
+     for each x
+     if edges[y, x]:
+     push (x, y) -> edge points
+     
+     for each theta:
+     for each (x, y) in edge points
+     stuff
+     */
 
     
     // Part 1 - build the histogram
+    unsigned char *iter = (unsigned char*)(text_edges.data);
+
+    std::vector<cv::Point2d> edge_pixels;
+    int num_pixels = 0;
+    for(int i = 0; i < h; i = i + 2){
+        for(int j = 0; j < w; j = j + 2){
+            unsigned char pixel = iter[text_edges.step * i + j];
+            if( ((int)pixel) == 255){
+                cv::Point2d* curr = new cv::Point2d();
+                curr->x = j;
+                curr->y = i;
+                edge_pixels.push_back(*curr);
+                num_pixels++;
+            }
+        }
+    }
+    
     int min_bin;
     int max_bin;
+    clock_t t;
     float sum_time = 0.0;
-    // j is columns, i is rows
     for(int k = 0; k < num_thetas; k++){
         min_bin = 10000;
         max_bin = 0;
-        clock_t t;
         t = clock();
         printf ("Calculating num theta %d...\n", k);
-        for(int i = 0; i < h; i = i + 3){
-            for(int j = 0; j < w; j = j + 3){
-                unsigned char pixel = iter[text_edges.step * i + j];
-                if( ((int)pixel) == 255){
-                    int bindex = (-(j-cx)*sin(thetas[k]) + (i-cy)*cos(thetas[k]))*irho + 0.5*bin_max;
-                    if(bindex > max_bin)
-                        max_bin = bindex;
-                    if(bindex < min_bin)
-                        min_bin = bindex;
-                    
-                    // make sure we don't index out of bounds when updating histogram
-                    // each histogram goes from [0; bin_max], so array length is bin_max+1
-                    assert(bindex >= 0 && bindex <= bin_max);
-                    hist[k][bindex]++;
-                }
-            }
+        for (std::vector<cv::Point2d>::iterator iter = edge_pixels.begin() ; iter != edge_pixels.end(); ++iter){
+            int x = iter->x;
+            int y = iter->y;
+            int bindex = (-(x-cx)*sin(thetas[k]) + (y-cy)*cos(thetas[k]))*irho + 0.5*bin_max;
+            if(bindex > max_bin)
+                max_bin = bindex;
+            if(bindex < min_bin)
+                min_bin = bindex;
+
+        // make sure we don't index out of bounds when updating histogram
+        // each histogram goes from [0; bin_max], so array length is bin_max+1
+        assert(bindex >= 0 && bindex <= bin_max);
+        hist[k][bindex]++;
         }
+        
         t = clock() - t;
         sum_time = sum_time + ((float)t)/CLOCKS_PER_SEC;
-        printf ("It took me %d clicks (%f seconds).\n", t, ((float)t)/CLOCKS_PER_SEC);
+        printf ("It took me %lu clicks (%f seconds).\n", t, ((float)t)/CLOCKS_PER_SEC);
     }
     
     printf("\n\nTotal Preprocessing time: %f\n", sum_time);
-    printf("\n\nNumber of Pixels: %d\n", h*w);
-    printf("\n\nNumber of Thetas: %d\n", num_thetas);
+    printf("\n\nNumber of Pixels: %d\n", num_pixels);
+    
     
     // Part 2 - pick best angle (theta with max num zeros)
     // indexing: hist[k][bin]
@@ -157,13 +184,10 @@ int ImageProcessor::correctRotation(cv::Mat &image, cv::Mat &output, float heigh
     int best_num_zeros = 0;
     for(int k = 0; k < num_thetas; k++){
         int num_zeros = 0;
-//        printf("\ncurr theta: %f\n", thetas[k]);
         for(int i = 0; i < bin_max+1; i++){
-//            printf(" %d", hist[k][i]);
             if(hist[k][i] == 0)
                 num_zeros++;
         }
-//        printf("\nnum zeros: %d\n", num_zeros);
         if(num_zeros > best_num_zeros){
             best_num_zeros = num_zeros; // keep count of zeros in column with best theta
             best_theta = thetas[k]; // store index of best angle
@@ -172,18 +196,20 @@ int ImageProcessor::correctRotation(cv::Mat &image, cv::Mat &output, float heigh
 
     
     best_theta = best_theta * (180/M_PI);
-//    printf("\nbest num zeros: %d", best_num_zeros);
-//    printf("\nbest angle: %f", best_theta);
 
-
-    //TEMP: DELETE THIS
     double rot = (double)best_theta;
     output = rotateImage(image, rot);
 
 
+    // clean up histogram
     for(int i = 0; i < num_thetas; i++)
         delete hist[i];
     delete[] hist;
+    
+    // clean up vector
+//    for (std::vector<cv::Point2d>::iterator iter = edge_pixels.begin() ; iter != edge_pixels.end(); ++iter){
+//        delete &iter;
+//    }
     
     delete[] thetas;
     
