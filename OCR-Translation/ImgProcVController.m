@@ -5,6 +5,13 @@
 //  Created by Paolo Tagliani on 08/06/12.
 //  Copyright (c) 2012 26775. All rights reserved.
 //
+
+//
+//  ImgProcVController.m
+//  OCR-Translation
+//  Modified on 05/06/16 by Brooke Kelsey and Gibson Cook
+//
+
 #import "ImgProcVController.h"
 #import "StartupViewController.h"
 #import "LangTableViewController.h"

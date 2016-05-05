@@ -6,6 +6,11 @@
 //  Copyright (c) 2012 26775. All rights reserved.
 //
 
+//
+//  OCR-Translation
+//  Modified on 05/06/16 by Brooke Kelsey and Gibson Cook
+//
+
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

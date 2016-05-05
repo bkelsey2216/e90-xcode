@@ -13,9 +13,6 @@
     UIImage *processedImage;
 }
 
-// button for manually switching to next view - save incase we want to do this later
-// @property (strong, nonatomic) IBOutlet UIButton *displayNextView;
-
 @property (strong, nonatomic) IBOutlet UIButton *getPhoto;
 - (IBAction)TakePhoto:(id)sender;
 - (UIView*)CreateOverlay;

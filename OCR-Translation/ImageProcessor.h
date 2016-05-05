@@ -6,6 +6,11 @@
 //  Copyright (c) 2012 26775. All rights reserved.
 //
 
+//
+//  OCR-Translation
+//  Modified on 05/06/16 by Brooke Kelsey and Gibson Cook
+//
+
 #ifndef InfojobOCR_ImageProcessor_h
 #define InfojobOCR_ImageProcessor_h
 
@@ -24,28 +29,14 @@ public:
     cv::Mat processImage(cv::Mat source, float height);
     
     /*
-     Filter the image with a median filter to redue the salt&pepper noise,
-     then apply the smooth operator to reduce noise.
-     */
-    cv::Mat filterMedianSmoot(const cv::Mat &source);
-    
-    /*
-     Filter with a gaussian
-     */
-    
-    cv::Mat filterGaussian(const cv::Mat&source);
-    
-    /*
      Histogram equalization on 1 channel image
      */
     cv::Mat equalize(const cv::Mat&source);
     
     /*
-     Binarization made using a mobile median treshold,
-     adapted using the image dimension
+     Binarization made using Adaptive Thresholding
      */
     cv::Mat binarize(const cv::Mat&source);
-    
     
     /*
      Detect if an image is rotated and correct to the proper orientation
@@ -59,7 +50,6 @@ public:
      */
     cv::Mat rotateImage(const cv::Mat& source, double angle);
     
-
 
 };
 

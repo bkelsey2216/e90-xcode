@@ -1,18 +1,21 @@
 //
-//  ImageProcessingImplementation.m
+//  ImageProcessingImplementation.mm
 //  InfojobOCR
 //
 //  Created by Paolo Tagliani on 10/05/12.
 //  Copyright (c) 2012 26775. All rights reserved.
 //
 
+//
+//  OCR-Translation
+//  Modified on 05/06/16 by Brooke Kelsey and Gibson Cook
+//
+
 #import "ImageProcessingImplementation.h"
 #import "ImageProcessor.h"
 #import "UIImage+OpenCV.h"
 
-
 @implementation ImageProcessingImplementation
-
 
 - (NSString*) pathToLangugeFIle{
     
@@ -41,14 +44,8 @@
 
 - (UIImage*) processImage:(UIImage*) src{
     
-    
-    /**
-     *  PRE-PROCESSING OF THE IMAGE
-     **/
     ImageProcessor processor;
-    
     UIImage * processed= [UIImage imageWithCVMat:processor.processImage([src CVGrayscaleMat], src.size.height)];
-    
     return processed;
 
 }
@@ -77,47 +74,5 @@
     return [NSString stringWithUTF8String:ocr_result];
     
 }
-
-
-
-- (UIImage*) processRotation:(UIImage*)src{
-    
-    ImageProcessor processor;
-    cv::Mat source=[src CVGrayscaleMat];
-    processor.correctRotation(source, source, src.size.height);
-    UIImage *rotated=[UIImage imageWithCVMat:source];
-    return rotated;
-    
-}
-
-- (UIImage*) processHistogram:(UIImage*)src{
-    
-    ImageProcessor processor;
-    cv::Mat source=[src CVGrayscaleMat];
-    cv::Mat output=processor.equalize(source);
-    UIImage *equalized=[UIImage imageWithCVMat:output];
-    return equalized;
-    
-}
-
-- (UIImage*) processFilter:(UIImage*)src{
-   
-    ImageProcessor processor;
-    cv::Mat source=[src CVGrayscaleMat];
-    cv::Mat output=processor.filterMedianSmoot(source);
-    UIImage *filtered=[UIImage imageWithCVMat:output];
-    return filtered;
-    
-}
-
-- (UIImage*) processBinarize:(UIImage*)src{
-    
-    ImageProcessor processor;
-    cv::Mat source=[src CVGrayscaleMat];
-    cv::Mat output=processor.binarize(source);
-    UIImage *binarized=[UIImage imageWithCVMat:output];
-    return binarized;
-}
-
 
 @end

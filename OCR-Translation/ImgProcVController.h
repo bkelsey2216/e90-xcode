@@ -6,6 +6,12 @@
 //  Copyright (c) 2012 26775. All rights reserved.
 //
 
+//
+//  ImgProcVController.h
+//  OCR-Translation
+//  Modified on 05/06/16 by Brooke Kelsey and Gibson Cook
+//
+
 #import <UIKit/UIKit.h>
 #import "ImageProcessingProtocol.h"
 
@@ -27,17 +33,10 @@
 @property (strong, nonatomic) IBOutlet UIButton *confirmLanguage;
 @property (strong, nonatomic) IBOutlet UIButton *takeNewPhoto;
 
-
-//- (IBAction)TakePhoto:(id)sender;
 - (IBAction)Pre:(id)sender;
 - (IBAction)OCR:(id)sender;
 
 - (IBAction)confirmLanguage:(id)sender;
 - (IBAction)takeNewPhoto:(id)sender;
-
-// ChooseMedia doesn't exist anymore:
-//- (IBAction)ChooseMedia:(id)sender;
-//- (UIView*)CreateOverlay;
-
 
 @end
