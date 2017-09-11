@@ -1,0 +1,7 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(PODS_ROOT)/OpenCV
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/FGTranslator" "${PODS_ROOT}/Headers/Public/OpenCV" "${PODS_ROOT}/Headers/Public/TMCache" "${PODS_ROOT}/Headers/Public/Tesseract"
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/Tesseract/lib"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/FGTranslator" -isystem "${PODS_ROOT}/Headers/Public/OpenCV" -isystem "${PODS_ROOT}/Headers/Public/TMCache" -isystem "${PODS_ROOT}/Headers/Public/Tesseract"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"AFNetworking" -l"FGTranslator" -l"TMCache" -l"c++" -l"lept" -l"stdc++" -l"tesseract_all" -framework "AVFoundation" -framework "Accelerate" -framework "AssetsLibrary" -framework "CoreGraphics" -framework "CoreImage" -framework "CoreMedia" -framework "CoreVideo" -framework "Foundation" -framework "MobileCoreServices" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "UIKit" -framework "opencv2" -weak_framework "UIKit"
+PODS_ROOT = ${SRCROOT}/Pods

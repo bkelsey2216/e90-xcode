@@ -214,7 +214,7 @@
 				ORGANIZATIONNAME = 26775;
 				TargetAttributes = {
 					0E20426515824F34009D88F2 = {
-						DevelopmentTeam = K9JPCZYB8R;
+						DevelopmentTeam = SWY8WF536H;
 					};
 				};
 			};
