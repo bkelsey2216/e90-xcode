@@ -1,5 +1,4 @@
 OCR-Translation
-===============================
 
 This is a project for a translation application using OpenCV, Tesseract OCR, and the Google Translate API. All of our work is for academic purposes only.
 
@@ -9,5 +8,6 @@ It uses the build for OpenCV and Tesseract provided by from @PablosPoject (conta
 Download the project and use [CocoaPods](http://cocoapods.org/) to install required libraries, by running `pod install`.
 
 OpenCV/Tesseract base released by @PablosProject under GPL.
+
 
 
